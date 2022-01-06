@@ -7,7 +7,7 @@ polyplot2 <- function(x,histogram=FALSE,curve=FALSE,main="PolyPlot",xlab=NULL,xl
   if (is.null(xlim)) {xlim=c(floor(min(dens$x)),ceiling(max(dens$x)))};
   maxdens <- max(dens$y);
   y1 <- maxdens/4; y2 <- y1*2; y3 <- y1*3; y4 <- y1*4;
-  if (is.null(ylim)) {ylim <- c(0,maxdens+.03)};
+  if (is.null(ylim)) {ylim <- c(0,maxdens*1.1)};
 # Create basic and background plots
   par(mar=c(5,5,4,5))
   if(is.null(xlab)) {xlab <- substitute(x)};
