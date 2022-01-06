@@ -1,5 +1,7 @@
 # polyplot
-## Reference: Seier E. & Bonett D.G. (2011). A polyplot for visualizing location, spread, skewness and kurtosis. The American Statistician, 65(4), pp. 258-261.
+## Seier E. & Bonett D.G.(2011). 
+## A polyplot for visualizing location, spread, skewness and kurtosis.
+## The American Statistician, 65(4), pp. 258-261.
 
 polyplot<- function(x) {
 n<-length(x);n2=floor(n/2);if(n%%2==0) n2m1=n2+1 else n2m1=n2+2;
@@ -28,14 +30,13 @@ if (fskew>=0)  {segments(xmean,1,xmean+s,1, lwd=2)
 }else{ segments(xmean,1,xmean+s,1, lty='dashed')};
 if (fskew>=0) {segments(xmean-s,1,xmean,1, lty='dashed')
 }else{ segments(xmean-s,1,xmean,1, lwd=2)};
-segments(mi,0,ma,0,, lwd=2);points(xmean,2,pch=19,col=col);
-points(xmean,1,pch=19,col=col);points((mi+ma)/2,0,pch=3,col=col);
-points(m1,2,pch=19, col=col);points(m2,2,pch=19, col=col);
-points(xmed,3.1,pch=25,col=col,bg=col);
-points(q1,3.1,pch=25,col=col,bg=col);
-points(q3,3.1, pch=25,col=col,bg=col);
-points(mi,0,pch= 15 );points(ma,0,pch= 15 );
-segments(xmed,3,xmean,2, lty='dotted');
+segments(mi,0,ma,0,, lwd=2);points(xmean,2,pch=19,col='black');
+points(xmean,1,pch=19,col='black');points((mi+ma)/2,0,pch=3,col='black');
+points(m1,2,pch=19, col='black');points(m2,2,pch=19, col='black');
+points(xmed,3.1,pch=25,col='black',bg='black');
+points(q1,3.1,pch=25,col='black',bg='black');
+points(q3,3.1, pch=25,col='black',bg='black');points(mi,0,pch= 15 );
+points(ma,0,pch= 15 );segments(xmed,3,xmean,2, lty='dotted');
 segments(q1,3,q3,3, lwd=2); rmi=round(mi,4);rma=round(ma,4);
 ## PRINTING STATISTICS
 iqr=q3-q1;riqr=round(iqr,2);rdelta=round(delta,2);
@@ -44,7 +45,7 @@ rq1=round(q1,2);rq3=round(q3,2);rxmed=round(xmed,2);
 fence2<-q3+(1.5*iqr)
 fence1<-q1-(1.5*iqr)
 text(fence1,0, '(')
-text(fence2,0,')')
+ text(fence2,0,')')
 rxmean=round(xmean,2);
 mtext('MAD',side=4,line=2,at=2,cex=0.8,las=1,adj=0);
 mtext('IQR',side=4,line=2,at=3.5, cex=0.8, las=1,adj=0);
