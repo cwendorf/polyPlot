@@ -50,20 +50,20 @@ polyplot2 <- function(x,histogram=FALSE,curve=FALSE,main="PolyPlot",xlab=NULL,xl
 # Add poly statistics to the plot
   if (values) {
   labels0 <- round(c(mi,(mi+ma)/2,ma),digits); rR2 <- round((ma-mi)/2,digits);
-  text(labels0,0,labels0,cex=.8,pos=3,font=2,offset=1);
-  mtext('R/2',side=4,at=0,cex=0.8,las=1,font=2); mtext(rR2,side=4,at=0,cex=0.8,las=1,font=2,padj=-1.6);
+  text(labels0,0,labels0,cex=.8,pos=3,col=col,font=2,offset=1);
+  mtext('R/2',side=4,at=0,cex=0.8,las=1,col=col,font=2); mtext(rR2,side=4,at=0,cex=0.8,las=1,col=col,font=2,padj=-1.6);
   labels1 <- round(c(xmean-s,xmean,xmean+s),digits); rs <- round(s,digits); 
-  text(labels1,y1,labels1,cex=.8,pos=3,font=2,offset=1);
-  mtext('SD',side=4,at=y1,cex=0.8,las=1,font=2); mtext(rs,side=4,at=y1,cex=0.8,las=1,font=2,padj=-1.6);
+  text(labels1,y1,labels1,cex=.8,pos=3,col=col,font=2,offset=1);
+  mtext('SD',side=4,at=y1,cex=0.8,las=1,col=col,font=2); mtext(rs,side=4,at=y1,cex=0.8,las=1,col=col,font=2,padj=-1.6);
   labels2 <- round(c(m1,xmean,m2),digits); rdelta <- round(delta,digits);
-  text(labels2,y2,labels2,cex=.8,pos=3,font=2,offset=1);
-  mtext('MAD',side=4,at=y2,cex=0.8,las=1,font=2); mtext(rdelta,side=4,at=y2,cex=0.8,las=1,font=2,padj=-1.6);
+  text(labels2,y2,labels2,cex=.8,pos=3,col=col,font=2,offset=1);
+  mtext('MAD',side=4,at=y2,cex=0.8,las=1,col=col,font=2); mtext(rdelta,side=4,at=y2,cex=0.8,las=1,col=col,font=2,padj=-1.6);
   labels3 <- round(c(q1,xmed,q3),digits); riqr2 <- round(iqr/2,digits);
-  text(labels3,y3,labels3,cex=.8,pos=3,font=2,offset=1)
-  mtext('IQR/2',side=4,at=y3,cex=0.8,las=1,font=2); mtext(riqr2,side=4,at=y3,cex=0.8,las=1,font=2,padj=-1.6);
+  text(labels3,y3,labels3,cex=.8,pos=3,col=col,font=2,offset=1)
+  mtext('IQR/2',side=4,at=y3,cex=0.8,las=1,col=col,font=2); mtext(riqr2,side=4,at=y3,cex=0.8,las=1,col=col,font=2,padj=-1.6);
   labels4 <- round(mode,digits);
-  text(labels4,y4,labels4,cex=.8,pos=3,font=2,offset=1);
-  mtext('N',side=4,at=y4,cex=0.8,las=1,font=2); mtext(n,side=4,at=y4,cex=0.8,las=1,font=2,padj=-1.6);
+  text(labels4,y4,labels4,cex=.8,pos=3,col=col,font=2,offset=1);
+  mtext('N',side=4,at=y4,cex=0.8,las=1,col=col,font=2); mtext(n,side=4,at=y4,cex=0.8,las=1,col=col,font=2,padj=-1.6);
 }}
 
 tcol <- function(color,percent=30,name=NULL) {
