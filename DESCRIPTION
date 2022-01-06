@@ -1,0 +1,10 @@
+Package: polyplot2
+Type: Package
+Title: polyplot2
+Description: A Modified polyplot for R  
+Version: 0.1.20220106
+Depends: R (>= 3.6.2)
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
