@@ -6,7 +6,7 @@
 
 ### Overview
 
-**polyplot2** offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
+`polyplot2` offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
 ### Installation
 

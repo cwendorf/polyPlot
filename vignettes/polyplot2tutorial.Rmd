@@ -47,7 +47,7 @@ By default, the function labels all of the points and provides summary statistic
 
 ### Using the PolyPlot to Determine Shape
 
-If desired, `polyplot2` can be customized in a variety of ways. The following code demonstrates some of the available options. Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
+The following code demonstrates some of the available options for customizing the PolyPlot.Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
 
 ```{r}
 par(mfrow=c(1,2))
