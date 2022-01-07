@@ -1,7 +1,7 @@
 # polyplot2
 
-## Upcoming Release
+## polyplot2 0.1.20220107
 
 - Initial release
-- Original and modified polyplot
-- Examples of polyplot comparisons
+- Original and modified polyplot functions
+- Examples of polyplots with options
