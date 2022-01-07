@@ -2,13 +2,7 @@
 
 \name{polyplot2-package}
 \alias{polyplot2-package}
-\alias{polyplot2}
 \docType{package}
-
-\title{polyplot2}
-\description{
-\code{polyplot2} A modified polyplot.
-}
 
 \details{
 \tabular{ll}{
