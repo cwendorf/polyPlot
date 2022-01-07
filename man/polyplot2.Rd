@@ -24,7 +24,3 @@
 \item{cex}{custom size for the polyplot symbols}
 \item{digits}{number of decimal places for the labels and statistics{}
 }
-
-\value{
-A modified polyplot
-}
