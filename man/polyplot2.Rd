@@ -1,4 +1,5 @@
 % File man/polyplot2.Rd
+% Part of the polyplot2 package
 
 \name{polyplot2}
 \alias{polyplot2}
@@ -10,12 +11,6 @@
 }
 
 \arguments{
-\item{\dots}{a set of (non-empty) numeric vectors of data values}
-\item{formula}{a formula of the form \code{lhs ~ rhs} where \code{lhs} is a numeric variable giving the data values and \code{rhs} a factor giving the corresponding groups}
-\item{main}{a custom title for the table}
-\item{digits}{the specified number of decimal places}
-}
-
 \item{y}{a (non-empty) numeric vector of data values}
 \item{histogram}{whether a histogram should be underlayed behind the polyplot}
 \item{curve}{whether a density curve should be underlayed behind the polyplot}
@@ -28,6 +23,7 @@
 \item{bg}{custom color for the underlying histogram and/or curve}
 \item{cex}{custom size for the polyplot symbols}
 \item{digits}{number of decimal places for the labels and statistics{}
+}
 
 \value{
 A modified polyplot
