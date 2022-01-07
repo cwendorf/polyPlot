@@ -4,6 +4,11 @@
 \alias{polyplot2-package}
 \docType{package}
 
+\title{polyplot2}
+\description{
+\code{polyplot2} A modified polyplot.
+}
+
 \details{
 \tabular{ll}{
 Package: \tab polyplot2\cr
