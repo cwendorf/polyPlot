@@ -1,4 +1,4 @@
-## Tutorials for PolyPlot2
+## Tutorial for PolyPlot2
 
 ### The Basic PolyPlot
 
