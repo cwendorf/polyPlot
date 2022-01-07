@@ -2,21 +2,16 @@
 
 ### The Basic PolyPlot
 
-In order to demonstrate the finer points of a polyplot, we first need to create some data. The following code simulates 1000 scores from a positively skewed unimodal distribution.
+In order to demonstrate the finer points of a polyplot, we first need to create some data. The following code simulates 1000 scores from a positively skewed unimodal distribution.Then we can call `polyplot2` for this set of Scores using all of the default options.
 
 ```r
 Scores <- c(rnorm(n=600,mean=100,sd=15),rnorm(n=200,mean=115,sd=20),rnorm(n=200,mean=130,sd=25))
-```
-
-Then we can call `polyplot2` for this set of Scores, using all of the default options.
-
-```r
 polyplot2(Scores)
 ```
 
 ![](polyplot2.jpeg)<!-- -->
 
-By default, the figure labels all of the points and provides summary statistics in the margin. Generally speaking, each level/row provides a different category of measures of location and spread.
+By default, the function labels all of the points and provides summary statistics in the margin. Generally speaking, each level/row provides a different category of measures of location and spread.
 
 Row | Labeled Points | Margin Value
 :-- | :-- | :--
