@@ -1,7 +1,7 @@
 # polyplot2
 ## Modified version of Seier & Bonett's (2011) polyplot
 
-polyplot2 <- function(x,histogram=FALSE,curve=FALSE,main="PolyPlot",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
+polyplot2 <- function(x,histogram=FALSE,curve=FALSE,main="PolyPlot2",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
 # Determine plot limits
   dens <- density(x);
   if (is.null(xlim)) {xlim=c(floor(min(dens$x)),ceiling(max(dens$x)))};
