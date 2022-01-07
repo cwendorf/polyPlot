@@ -22,5 +22,5 @@
 \item{col}{custom color for the polyplot points, segments, and labels}
 \item{bg}{custom color for the underlying histogram and/or curve}
 \item{cex}{custom size for the polyplot symbols}
-\item{digits}{number of decimal places for the labels and statistics{}
+\item{digits}{number of decimal places for the labels and statistics}
 }
