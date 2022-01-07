@@ -1,15 +1,41 @@
+---
+title: "PolyPlot2"
+author: "Craig A. Wendorf"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    collapse: true
+    theme: cerulean
+    highlight: tango
+    keep_md: TRUE
+vignette: >
+  %\VignetteIndexEntry{Tutorial for PolyPlot2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r,include=FALSE}
+#suppress the warnings and other messages from showing in the knitted file.
+knitr::opts_chunk$set(fig.width=7, fig.height=5,fig.path='figures/',echo=TRUE,warning=FALSE,message=FALSE)
+```
+
+```{r,include=FALSE}
+library(polyplot2)
+```
+
 ## Tutorial for PolyPlot2
 
 ### The Basic PolyPlot
 
 In order to demonstrate the finer points of a PolyPlot, the following code simulates 1000 scores from a positively skewed unimodal distribution and then calls `polyplot2` using the default options.
 
-```r
+```{r}
 Scores <- c(rnorm(n=600,mean=100,sd=15),rnorm(n=200,mean=115,sd=20),rnorm(n=200,mean=130,sd=25))
 polyplot2(Scores)
 ```
-
-![](polyplot2.jpeg)<!-- -->
 
 By default, the function labels all of the points and provides summary statistics in the margin. Generally speaking, each level/row provides a different category of measures of location and spread.
 
@@ -23,12 +49,10 @@ By default, the function labels all of the points and provides summary statistic
 
 If desired, `polyplot2` can be customized in a variety of ways. The following code demonstrates some of the available options. Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
 
-```r
+```{r}
 par(mfrow=c(1,2))
 polyplot2(Scores,histogram=TRUE,curve=FALSE,values=FALSE,main="PolyPlot2 plus Histogram",col="darkblue",bg="darkgoldenrod")
 polyplot2(Scores,histogram=FALSE,curve=TRUE,values=FALSE,main="PolyPlot2 plus Density Curve",col="darkblue",bg="darkgoldenrod")
 ```
-
-![](polyplot2plus.jpeg)<!-- -->
 
 Further explanation of the polyplot and how it can be used to understand the shape of the distribution is available in Seier and Bonett (2011).
