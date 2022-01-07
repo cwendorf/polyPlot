@@ -7,7 +7,7 @@
 
 ### Overview
 
-`polyplot2` offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
+**polyplot2** offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
 ### Installation
 
@@ -35,3 +35,7 @@ Simple documentation and tutorials are available:
 - GitHub Issues: [https://github.com/cwendorf/polyplot2/issues](https://github.com/cwendorf/polyplot2/issues) 
 - Author Email: [cwendorf@uwsp.edu](mailto:cwendorf@uwsp.edu)
 - Author Homepage: [https://cwendorf.github.io](https://cwendorf.github.io)
+
+### Citation
+
+Wendorf, C.A. (2022). *polyplot2: A modified polyplot* [R Package]. [https://github.com/cwendorf/polyplot2](https://github.com/cwendorf/polyplot2)
