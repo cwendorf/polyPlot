@@ -6,7 +6,7 @@
 \description{Provides a modified PolyPlot}
 
 \usage{
-\method{polyplot2}(y,histogram=FALSE,curve=FALSE,main="PolyPlot2",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
+\method{polyplot2}(y,histogram=FALSE,curve=FALSE,main="PolyPlot2",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2)
 }
 
 \arguments{
