@@ -1,8 +1,8 @@
-## Tutorial for PolyPlot2
+## Tutorial for Polyplot2
 
-### The Basic PolyPlot
+### The Basic Polyplot
 
-In order to demonstrate the finer points of a PolyPlot, the following code simulates 1000 scores from a positively skewed unimodal distribution and then calls `polyplot2` using the default options.
+In order to demonstrate the finer points of a polyplot, the following code simulates 1000 scores from a positively skewed unimodal distribution and then calls `polyplot2` using the default options.
 
 ```r
 Scores <- c(rnorm(n=600,mean=100,sd=15),rnorm(n=200,mean=115,sd=20),rnorm(n=200,mean=130,sd=25))
@@ -21,7 +21,7 @@ By default, the function labels all of the points and provides summary statistic
 
 ### Using the PolyPlot to Determine Shape
 
-The following code demonstrates some of the available options for customizing the PolyPlot. Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
+The following code demonstrates some of the available options for customizing the polyplot. Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
 
 ```r
 par(mfrow=c(1,2))
