@@ -9,6 +9,10 @@
 
 **polyplot2** offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
+<a href="https://github.com/cwendorf/polyplot2">
+<p align="center"><kbd><img src="docs/figures/polyplot2CoverImage.jpg"></kbd></p>
+</a>
+
 ### Installation
 
 This package is not currently on CRAN, but can be installed from GitHub:
@@ -28,7 +32,10 @@ source("http://raw.githubusercontent.com/cwendorf/polyplot2/main/source-polyplot
 ### Usage
 
 Simple documentation and tutorials are available:  
-[https://github.com/cwendorf/polyplot2/tree/main/docs](https://github.com/cwendorf/polyplot2/tree/main/docs) 
+[https://github.com/cwendorf/polyplot2/tree/main/docs](https://github.com/cwendorf/polyplot2/tree/main/docs)
+
+- Explanation of the basic polyplot
+- Adding modes, histograms, and density curves to create polyplot2
 
 ### Contact Me
 
