@@ -12,7 +12,7 @@ polyplot2(Scores)
 
 ### Using the PolyPlot to Determine Shape
 
-#### The following code demonstrates some of the available options for customizing the PolyPlot.Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
+#### The following code demonstrates some of the available options for customizing the PolyPlot. Similarly, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
 par(mfrow=c(1,2))
-polyplot2(Scores,histogram=TRUE,curve=FALSE,values=FALSE,main="PolyPlot2 plus Histogram",col="darkblue",bg="darkgoldenrod")
-polyplot2(Scores,histogram=FALSE,curve=TRUE,values=FALSE,main="PolyPlot2 plus Density Curve",col="darkblue",bg="darkgoldenrod")
+polyplot2(Scores,plot="frequency",type="bar",values=FALSE,main="PolyPlot2 plus Frequency Histogram",col="darkblue",bg="darkgoldenrod")
+polyplot2(Scores,plot="density",type="curve",values=FALSE,main="PolyPlot2 plus Density Curve",col="darkblue",bg="darkgoldenrod")

@@ -1,25 +1,26 @@
 # polyplot2
 ## Modified version of Seier & Bonett's (2011) polyplot
 
-polyplot2 <- function(x,histogram=FALSE,curve=FALSE,main="PolyPlot2",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
+polyplot2 <- function(x,plot="none",type="none",main="PolyPlot2",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
 # Determine plot limits
   dens <- density(x);
   if (is.null(xlim)) {xlim=c(floor(min(dens$x)),ceiling(max(dens$x)))};
-  if (histogram) {a <- invisible(hist(x,plot=FALSE)); maxdens <- max(a$counts)}
-  else {maxdens <- max(dens$y)};
+  if (plot=="frequency") {a <- hist(x,plot=FALSE); maxdens <- max(a$counts)} else {maxdens <- max(dens$y)};
   if (is.null(ylim)) {ylim <- c(0,maxdens*1.1)};
 # Create basic and background plots
   par(mar=c(5,5,4,5))
   if(is.null(xlab)) {xlab <- substitute(x)};
-  if (!histogram) {histborder="white"; histbg="white"} else {histborder=bg; histbg=tcol(bg,10)};
-  if (histogram) {prob=FALSE} else {prob=TRUE}
+  if (type=="bar") {histborder=bg; histbg=tcol(bg,10);} else {histborder="white"; histbg="white";};
+  if (plot=="density" & type=="bar") {prob=TRUE} else {prob=FALSE};
   hist1 <- hist(x,prob=prob,plot=TRUE,axes=FALSE,col=histbg,border=histborder,xlab=xlab,ylab=NULL,xlim=xlim,ylim=ylim,main=main);
   axis(1,at=hist1$mids); 
-  if (histogram) {axis(2); mtext("Frequency",side=2,line=3)};
-  if (curve) {axis(2); mtext("Density",side=2,line=3); polygon(dens,col=tcol(bg,10),border=bg)};
+  if (plot=="frequency") {axis(2); mtext("Frequency",side=2,line=3)};
+  if (plot=="density") {axis(2); mtext("Density",side=2,line=3)}; 
+  if (plot=="density" & type=="curve") {polygon(dens,col=tcol(bg,10),border=bg)};
+  if (plot=="frequency" & type=="curve") {polygon(c(min(hist1$breaks),hist1$mids,max(hist1$breaks)),c(0,hist1$counts,0),col=tcol(bg,10),border=bg)};
 # Calculate polyplot statistics
   mode <- hist1$mids[which.max(hist1$counts)]
-  if (histogram) {ymode <- max(hist1$counts)} else {ymode <- hist1$density[which.max(hist1$counts)]};
+  if (plot=="frequency") {ymode <- max(hist1$counts)} else {ymode <- hist1$density[which.max(hist1$counts)]};
   y1 <- ymode/4; y2 <- y1*2; y3 <- y1*3; y4 <- y1*4;
   n <- length(x); n2 <- floor(n/2); if(n%%2==0) (n2m1 <- n2+1) else (n2m1 <- n2+2);
   sx <- sort(x); n2m1 <- n2+1; first <- sx[1:n2]; second <- sx[n2m1:n];
@@ -28,8 +29,8 @@ polyplot2 <- function(x,histogram=FALSE,curve=FALSE,main="PolyPlot2",xlab=NULL,x
   cinco <- summary(x); q1 <- as.numeric(cinco[2]); q3 <- as.numeric(cinco[5]); iqr <- q3-q1;
   fskew <- (sum((x-xmean)^3));
   # fence1 <- q1-(1.5*iqr); fence2 <- q3+(1.5*iqr);
-  # points(c(fence1,fence2),c(0,0),pch=124,col=col,cex=cex)
 # Plot poly points and segments
+  # points(c(fence1,fence2),c(0,0),pch=124,col=col,cex=cex)
   points(c(mi,(mi+ma)/2,ma),c(0,0,0),pch=15,col=col,cex=cex);
   segments(mi,0,ma,0,lwd=2,col=col);
   points(xmean,y1,pch=19,col=col,cex=cex);

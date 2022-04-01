@@ -1,5 +1,9 @@
 # polyplot2
 
+## Developmental Version
+
+- Separated plot content from plot type
+
 ## polyplot2 0.1.220107
 
 - Initial release
