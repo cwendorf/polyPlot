@@ -31,11 +31,10 @@ source("http://raw.githubusercontent.com/cwendorf/polyplot2/main/source-polyplot
 
 ### Usage
 
-Simple documentation and tutorials are available:  
-[https://github.com/cwendorf/polyplot2/tree/main/docs](https://github.com/cwendorf/polyplot2/tree/main/docs)
+The available [Tutorial for PolyPLot2](./docs/README.md) provides:
 
-- Explanation of the basic polyplot
-- Adding modes, histograms, and density curves to create polyplot2
+- An explanation of the basic polyplot
+- Methods for adding modes, histograms, and density curves to the polyplot
 
 ### Contact Me
 
