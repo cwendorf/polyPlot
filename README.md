@@ -31,7 +31,7 @@ source("http://raw.githubusercontent.com/cwendorf/polyplot2/main/source-polyplot
 
 ### Usage
 
-The available [Tutorial for PolyPLot2](./docs/README.md) provides:
+The [Tutorial for PolyPLot2](./docs/README.md) provides:
 
 - An explanation of the basic polyplot
 - Methods for adding modes, histograms, and density curves to the polyplot
