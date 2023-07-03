@@ -8,7 +8,7 @@
 
 ### Overview
 
-**polyplot2** offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
+**polyplot2** is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
 <a href="https://github.com/cwendorf/polyplot2">
 <p align="center"><kbd><img src="docs/figures/polyplot2CoverImage.jpg"></kbd></p>
@@ -16,7 +16,7 @@
 
 ### Installation
 
-This package is not currently on CRAN, but can be installed and loaded from GitHub:
+This package is not currently on CRAN, but can be installed and loaded using these R commands:
 
 ``` r
 install.packages("remotes")
@@ -24,7 +24,7 @@ remotes::install_github("cwendorf/polyplot2")
 library(polyplot2)
 ```
 
-If you do not wish a full install, the latest functions can be sourced and accessed directly from GitHub:
+If you do not wish a full install, the latest functions can be made available using these R commands:
 
 ```r
 source("http://raw.githubusercontent.com/cwendorf/polyplot2/main/source-polyplot2.R")
