@@ -15,7 +15,7 @@ By default, the function labels all of the points and provides summary statistic
 
 - First/Top: Provides the mode of the distribution, with the sample size listed in the right margin
 - Second: Provides the quartiles (and median) of the distribution, with the interquartile range divided by 2 in the right margin
-- Third: Provides the means of the halves (and the whole) of the distribution, with the mean absolute deviation from the median in the right margin
+- Third: Provides the means of the halves (and the whole) of the distribution, with the mean absolute deviation from the mean in the right margin
 - Fourth: Provides the mean of the distribution and points +/- one standard deviation from the mean, with the standard deviation in the right margin
 - Fifth/Bottom: Provides the range (and midrange) of the distribution, with the range divided by 2 in the right margin
 
