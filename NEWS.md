@@ -3,6 +3,7 @@
 ## Developmental Version
 
 - Separated plot content from plot type
+- Added vignettes
 
 ## polyplot2 0.1.220107
 
