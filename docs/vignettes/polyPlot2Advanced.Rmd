@@ -12,7 +12,7 @@ output:
     highlight: tango
     keep_md: TRUE
 vignette: >
-  %\VignetteIndexEntry{Advanced Uses of PolyPlot2}
+  %\VignetteIndexEntry{Advanced Tutorial for PolyPlot2}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,20 +23,20 @@ knitr::opts_chunk$set(fig.width=7, fig.height=5,fig.path='figures/',echo=TRUE,wa
 ```
 
 ```{r,include=FALSE}
-if(!require(polyplot2)) {
+if(!require(polyPlot2)) {
 if(!require(remotes)) install.packages('remotes')
-remotes::install_github("cwendorf/polyplot2")}
-library(polyplot2)
+remotes::install_github("cwendorf/polyPlot2")}
+library(polyPlot2)
 ```
 
-## Advanced Uses of PolyPlot2
+## Advanced Tutorial for PolyPlot2
 
 The following code demonstrates some of the available options for customizing the PolyPlot. It also demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
 
 ### The PolyPlot for Positively Skewed Data
 
 Simulate some positively skewed data. Then use `polyStats` get the values separate from the `polyPlot` (which in this case features a frequency histogram).
-```{r}
+```{r<advanced-Positive}
 Scores <- round(rbeta(100,2,5)*20,0)
 polyStats(Scores,digits=3)
 polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Histogram for Positively Skewed Data")
@@ -45,7 +45,7 @@ polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=FALSE,main="Po
 ### The PolyPlot for Negatively Skewed Data
 
 Simulate some negatively skewed data. Then use `polyStats` get the values separate from the `polyPlot` (which in this case features a density curve).
-```{r}
+```{r,Advanced-Negative}
 Scores <- round(rbeta(100,5,2)*20,0)
 polyStats(Scores,digits=3)
 polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Density for Negatively Skewed Data")
@@ -54,7 +54,7 @@ polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=FALSE,main="Poly
 ### The PolyPlot for Bimodal Data
 
 Simulate some bimodal data. The values are presented on each `polyPlot` to show their utility in explaining the underlying data.
-```{r}
+```{r,Advanced-Bimodal}
 Scores <- c(round(rnorm(50,7,1),0),round(rnorm(50,13,1),0))
 polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=TRUE,main="PolyPlot and Histogram for Bimodal Data")
 polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=TRUE,main="PolyPlot and Density for Bimodal Data")

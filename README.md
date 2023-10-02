@@ -32,10 +32,15 @@ source("http://raw.githubusercontent.com/cwendorf/polyplot2/main/source-polyPlot
 
 ### Usage
 
-The [Tutorial for polyPlot2](./docs/README.md) provides:
+The [Basic Tutorial for polyPlot2](./docs/polyPlot2Basic.md) provides:
 
 - An explanation of the basic polyplot
-- Methods for adding modes, histograms, and density curves to the polyplot
+- Methods for adding histograms and density curves to the polyplot
+
+The [Advanced Tutorial polyPlot2](./docs/polyPlot2Advanced.md) provides:
+
+- An explanation of additional features of the polyplot functions
+- Examples of the polyplot for various distributional shapes
 
 ### Contact Me
 
