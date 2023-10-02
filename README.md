@@ -11,7 +11,7 @@
 **polyPlot2** is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
 <a href="https://github.com/cwendorf/polyPlot2">
-<p align="center"><kbd><img src="docs/figures/polyPlot2CoverImage.jpg"></kbd></p>
+<p align="center"><kbd><img src="docs/figures/polyPlot2CoverImage.png"></kbd></p>
 </a>
 
 ### Installation
