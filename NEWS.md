@@ -1,11 +1,12 @@
-# polyplot2
+# polyPlot2
 
-## Developmental Version
+## polyPlot2 0.2.231002
 
-- Separated plot content from plot type
-- Added vignettes
+- Added option to report statistics separate from plot
+- Updated background plots and value labeling
+- Added vignettes to demonstrate basic and advanced options
 
-## polyplot2 0.1.220107
+## polyPlot2 0.1.220107
 
 - Initial release
 - Original and modified polyplot functions

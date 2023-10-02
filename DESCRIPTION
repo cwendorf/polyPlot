@@ -1,8 +1,8 @@
-Package: polyplot2
+Package: polyPlot2
 Type: Package
-Title: polyplot2
-Description: A Modified polyplot for R  
-Version: 0.1.220107
+Title: polyPlot2
+Description: A Modified PolyPlot for R  
+Version: 0.2.231002
 Depends: R (>= 3.6.2)
 Encoding: UTF-8
 LazyData: true

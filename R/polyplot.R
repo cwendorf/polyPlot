@@ -1,5 +1,7 @@
-# polyplot
-## Seier E. & Bonett D.G.(2011). 
+# polyPlot2
+# The Original PolyPlot Code
+
+## Seier E. & Bonett D.G. (2011).
 ## A polyplot for visualizing location, spread, skewness and kurtosis.
 ## The American Statistician, 65(4), pp. 258-261.
 
@@ -12,8 +14,7 @@ cinco<-summary(x);
 q1<-as.numeric(cinco[2]);q3<-as.numeric(cinco[5]);
 ##par(mfcol=c(2,1))
 layout(matrix(c(1,2)),heights=c(3,2), widths=c(1,1))
-hist1<-hist(x,plot=
-TRUE, main= 'Histogram ',col= 'beige');nh=length(hist1$breaks);
+hist1<-hist(x,plot=TRUE, main= 'Histogram ',col= 'beige');nh=length(hist1$breaks);
 xa=hist1$breaks[1];xb=hist1$breaks[nh];par(mar=c(2, 4,2, 4) + 0.1);
 mm=max(abs(xa),abs(xb));fskew<-(sum((x-xmean)^3));
 plot(x,x,'n',xlab=' ',ylab=' ',ylim=c(-0.7,3.6),xlim=c(xa-0.1*mm,xb+0.1*mm),
@@ -42,10 +43,8 @@ segments(q1,3,q3,3, lwd=2); rmi=round(mi,4);rma=round(ma,4);
 iqr=q3-q1;riqr=round(iqr,2);rdelta=round(delta,2);
 rs=round(s,2);R=ma-mi;rR=round(R,2);
 rq1=round(q1,2);rq3=round(q3,2);rxmed=round(xmed,2);
-fence2<-q3+(1.5*iqr)
-fence1<-q1-(1.5*iqr)
-text(fence1,0, '(')
- text(fence2,0,')')
+fence2<-q3+(1.5*iqr); fence1<-q1-(1.5*iqr);
+text(fence1,0, '('); text(fence2,0,')');
 rxmean=round(xmean,2);
 mtext('MAD',side=4,line=2,at=2,cex=0.8,las=1,adj=0);
 mtext('IQR',side=4,line=2,at=3.5, cex=0.8, las=1,adj=0);

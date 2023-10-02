@@ -1,77 +1,64 @@
-# polyplot2
+# polyPlot2
 ## Modified version of Seier & Bonett's (2011) polyplot
 
-polyplot2 <- function(x,plot="none",type="none",main="PolyPlot2",xlab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
-# Determine plot limits
-  dens <- density(x);
-  if (is.null(xlim)) {xlim=c(floor(min(dens$x)),ceiling(max(dens$x)))};
-  if (plot=="frequency") {a <- hist(x,plot=FALSE); maxdens <- max(a$counts)} else {maxdens <- max(dens$y)};
-  if (is.null(ylim)) {ylim <- c(0,maxdens*1.1)};
-# Create basic and background plots
-  par(mar=c(5,5,4,5))
-  if(is.null(xlab)) {xlab <- substitute(x)};
-  if (type=="bar") {histborder=bg; histbg=tcol(bg,10);} else {histborder="white"; histbg="white";};
-  if (plot=="density" & type=="bar") {prob=TRUE} else {prob=FALSE};
-  hist1 <- hist(x,prob=prob,plot=TRUE,axes=FALSE,col=histbg,border=histborder,xlab=xlab,ylab=NULL,xlim=xlim,ylim=ylim,main=main);
-  axis(1,at=hist1$mids); 
-  if (plot=="frequency") {axis(2); mtext("Frequency",side=2,line=3)};
-  if (plot=="density") {axis(2); mtext("Density",side=2,line=3)}; 
-  if (plot=="density" & type=="curve") {polygon(dens,col=tcol(bg,10),border=bg)};
-  if (plot=="frequency" & type=="curve") {polygon(c(min(hist1$breaks),hist1$mids,max(hist1$breaks)),c(0,hist1$counts,0),col=tcol(bg,10),border=bg)};
-# Calculate polyplot statistics
-  mode <- hist1$mids[which.max(hist1$counts)]
-  if (plot=="frequency") {ymode <- max(hist1$counts)} else {ymode <- hist1$density[which.max(hist1$counts)]};
-  y1 <- ymode/4; y2 <- y1*2; y3 <- y1*3; y4 <- y1*4;
-  n <- length(x); n2 <- floor(n/2); if(n%%2==0) (n2m1 <- n2+1) else (n2m1 <- n2+2);
-  sx <- sort(x); n2m1 <- n2+1; first <- sx[1:n2]; second <- sx[n2m1:n];
-  m1 <- mean(first); m2 <- mean(second); xmean <- mean(x); 
-  xmed <- median(x); mi <- min(x); ma <- max(x); s <- sd(x); delta <- (sum(abs(x-xmed)))/n;
-  cinco <- summary(x); q1 <- as.numeric(cinco[2]); q3 <- as.numeric(cinco[5]); iqr <- q3-q1;
-  fskew <- (sum((x-xmean)^3));
-  # fence1 <- q1-(1.5*iqr); fence2 <- q3+(1.5*iqr);
-# Plot poly points and segments
-  # points(c(fence1,fence2),c(0,0),pch=124,col=col,cex=cex)
-  points(c(mi,(mi+ma)/2,ma),c(0,0,0),pch=15,col=col,cex=cex);
-  segments(mi,0,ma,0,lwd=2,col=col);
-  points(xmean,y1,pch=19,col=col,cex=cex);
-  if (fskew>=0) {segments(xmean,y1,xmean+s,y1,lwd=2,col=col)} else {segments(xmean,y1,xmean+s,y1,lty='dashed',col=col)};
-  if (fskew>=0) {segments(xmean-s,y1,xmean,y1,lty='dashed',col=col)} else {segments(xmean-s,y1,xmean,y1,lwd=2,col=col)};
-  points(c(m1,xmean,m2),c(y2,y2,y2),pch=19,col=col,cex=cex)
-  if (fskew>=0) {segments(m1,y2,xmean,y2,lty='dashed',col=col)} else {segments(m1,y2,xmean,y2,lwd=2,col=col)};
-  if (fskew>=0) {segments(xmean,y2,m2,y2,lty='solid',lwd=2,col=col)} else {segments(xmean,y2,m2,y2,lty='dashed',col=col)};
-  points(c(q1,xmed,q3),c(y3,y3,y3),pch=25,col=col,bg=col,cex=cex)
-  segments(q1,y3,q3,y3,lwd=2,col=col);
-  points(mode,y4,pch=18,col=col,bg=col,cex=cex+.5);
-  segments(mode,y4,xmed,y3,,lty='dotted',col=col);
-  segments(xmed,y3,xmean,y2,lty='dotted',col=col); 
-  segments(xmean,y2,xmean,y1,lty='dotted',col=col);
-  segments(xmean,y1,(mi+ma)/2,0,lty='dotted',col=col);
-  segments(xmean-s,y1,mi,0,lty='dotted',col=col); segments(xmean+s,y1, ma,0,lty='dotted',col=col);
-  segments(m1,y2,xmean-s,y1,lty='dotted',col=col); segments(m2,y2,xmean+s,y1,lty='dotted',col=col);
-  segments(q1,y3,m1,y2,lty='dotted',col=col); segments(q3,y3,m2,y2,lty='dotted',col=col);
-  segments(mode,y4,q1,y3,lty='dotted',col=col); segments(mode,y4,q3,y3,lty='dotted',col=col);
-# Add poly statistics to the plot
-  if (values) {
-  labels0 <- round(c(mi,(mi+ma)/2,ma),digits); rR2 <- round((ma-mi)/2,digits);
-  text(labels0,0,labels0,cex=.8,pos=3,col=col,font=2,offset=1);
-  mtext('R/2',side=4,at=0,cex=0.8,las=1,col=col,font=2); mtext(rR2,side=4,at=0,cex=0.8,las=1,col=col,font=2,padj=-1.65);
-  labels1 <- round(c(xmean-s,xmean,xmean+s),digits); rs <- round(s,digits); 
-  text(labels1,y1,labels1,cex=.8,pos=3,col=col,font=2,offset=1);
-  mtext('SD',side=4,at=y1,cex=0.8,las=1,col=col,font=2); mtext(rs,side=4,at=y1,cex=0.8,las=1,col=col,font=2,padj=-1.65);
-  labels2 <- round(c(m1,xmean,m2),digits); rdelta <- round(delta,digits);
-  text(labels2,y2,labels2,cex=.8,pos=3,col=col,font=2,offset=1);
-  mtext('MAD',side=4,at=y2,cex=0.8,las=1,col=col,font=2); mtext(rdelta,side=4,at=y2,cex=0.8,las=1,col=col,font=2,padj=-1.65);
-  labels3 <- round(c(q1,xmed,q3),digits); riqr2 <- round(iqr/2,digits);
-  text(labels3,y3,labels3,cex=.8,pos=3,col=col,font=2,offset=1)
-  mtext('IQR/2',side=4,at=y3,cex=0.8,las=1,col=col,font=2); mtext(riqr2,side=4,at=y3,cex=0.8,las=1,col=col,font=2,padj=-1.65);
-  labels4 <- round(mode,digits);
-  text(labels4,y4,labels4,cex=.8,pos=3,col=col,font=2,offset=1);
-  mtext('N',side=4,at=y4,cex=0.8,las=1,col=col,font=2); mtext(n,side=4,at=y4,cex=0.8,las=1,col=col,font=2,padj=-1.65);
-}}
-
-tcol <- function(color,percent=30,name=NULL) {
+.tcol <- function(color,percent=30,name=NULL) {
 # Create transparent versions of colors
   rgb.val <- col2rgb(color)
-  t.col <- rgb(rgb.val[1],rgb.val[2],rgb.val[3],max=255,alpha=(percent)*255/100,names=name)
-  invisible(t.col)
+  tcol <- rgb(rgb.val[1],rgb.val[2],rgb.val[3],max=255,alpha=(percent)*255/100,names=name)
+  invisible(tcol)
+}
+
+polyStats <- function(x,digits=2) {
+# Calculate polyplot statistics
+  n <- length(x); n2 <- floor(n/2); if(n%%2==0) (n2m1 <- n2+1) else (n2m1 <- n2+2)
+  sx <- sort(x); firsthalf <- sx[1:n2]; secondhalf <- sx[n2m1:n]
+  mi <- min(x); ma <- max(x); me <- (mi+ma)/2; range2 <- (ma-mi)/2
+  range <- c(mi,me,ma,range2)
+  xmed <- median(x); cinco <- summary(x); q1 <- as.numeric(cinco[2]); q3 <- as.numeric(cinco[5]); iqr2 <- (q3-q1)/2
+  quartiles <- c(q1,xmed,q3,iqr2)
+  xmean <- mean(x); s <- sd(x); zn1 <- xmean-s; zp1 <- xmean+s
+  zscores <- c(zn1,xmean,zp1,s)
+  mean1 <- mean(firsthalf); mean2 <- mean(secondhalf); delta <- (sum(abs(x-xmed)))/n
+  means <- c(mean1,xmean,mean2,delta)
+  results <- round(rbind(quartiles,means,zscores,range),digits)
+  colnames(results) <- c("Lower","Middle","Upper","Spread")
+  rownames(results) <- c("Quartiles","Means","Z Scores","Range")
+  return(results)
+}
+
+polyPlot <- function(x,type="none",main=NULL,xlab=NULL,ylab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2) {
+# Get polyplot statistics
+  stats <- polyStats(x)
+# Create basic and background plots
+  dens <- density(x)
+  if (is.null(xlim)) {xlim=c(floor(min(dens$x)),ceiling(max(dens$x)))}
+  if (type=="frequency") {a <- hist(x,plot=FALSE); maxy <- max(a$counts); histborder=bg; histbg=.tcol(bg,10)} else {maxy <- max(dens$y); histborder="white"; histbg="white"}
+  if (is.null(ylim)) {ylim <- c(0,maxy)}
+  if(is.null(xlab)) {xlab <- substitute(x)}
+  par(mar=c(5,5,3,2)); hist(x,prob=FALSE,plot=TRUE,axes=FALSE,col=histbg,border=histborder,xlab=xlab,ylab=NULL,xlim=xlim,ylim=ylim,main=NULL); axis(1)
+  if (type=="none") {if(is.null(main)) main="PolyPlot"}
+  if (type=="frequency") {axis(2); if(is.null(ylab)) ylab="Frequency"; if(is.null(main)) main="PolyPlot plus Frequency Histogram"}
+  if (type=="density") {axis(2); if(is.null(ylab)) ylab="Density"; if(is.null(main)) main="PolyPlot plus Density Curve"; polygon(dens,col=.tcol(bg,10),border=bg)}
+  title(main=main, ylab=ylab)
+# Plot poly points and segments
+  yy4 <- maxy/48; yy3 <- yy4*13; yy2 <- yy4*25; yy1 <- yy4*37
+  xmean <- mean(x); fskew <- sum((x-xmean)^3)
+  points(stats[1,1:3],c(yy1,yy1,yy1),pch=25,col=col,bg=col,cex=cex); segments(stats[1,1],yy1,stats[1,3],yy1,lwd=2,col=col)
+  points(stats[2,1:3],c(yy2,yy2,yy2),pch=19,col=col,cex=cex); segments(stats[2,1],yy2,stats[2,3],yy2,lty="dashed",col=col)
+  if (fskew>=0) {segments(stats[2,2],yy2,stats[2,3],yy2,lty='solid',lwd=2,col=col)} else {segments(stats[2,1],yy2,stats[2,2],yy2,lty="solid",lwd=2,col=col)}
+  points(stats[3,2],yy3,pch=19,col=col,cex=cex); segments(stats[3,1],yy3,stats[3,3],yy3,lty="dashed",col=col)
+  if (fskew>=0) {segments(stats[3,2],yy3,stats[3,3],yy3,lty='solid',lwd=2,col=col)} else {segments(stats[3,1],yy3,stats[3,2],yy3,lty="solid",lwd=2,col=col)}
+  points(stats[4,1:3],c(yy4,yy4,yy4),pch=15,col=col,cex=cex); segments(stats[4,1],yy4,stats[4,3],yy4,lwd=2,col=col)
+# Plot poly connectors
+  segments(stats[1,1],yy1,stats[2,1],yy2,lty='dotted',col=col); segments(stats[1,3],yy1,stats[2,3],yy2,lty='dotted',col=col)
+  segments(stats[2,1],yy2,stats[3,1],yy3,lty='dotted',col=col); segments(stats[2,3],yy2,stats[3,3],yy3,lty='dotted',col=col)
+  segments(stats[3,1],yy3,stats[4,1],yy4,lty='dotted',col=col); segments(stats[3,3],yy3,stats[4,3],yy4,lty='dotted',col=col)
+  segments(stats[1,2],yy1,stats[2,2],yy2,lty='dotted',col=col); segments(stats[2,2],yy2,stats[3,2],yy3,lty='dotted',col=col); segments(stats[3,2],yy3,stats[4,2],yy4,lty='dotted',col=col)
+# Add statistics to the plot
+  if (values) {
+  labels1 <- round(stats[1,1:3],digits); text(labels1,yy1,labels1,cex=.8,pos=3,col=col,font=2,offset=1)
+  labels2 <- round(stats[2,1:3],digits); text(labels2,yy2,labels2,cex=.8,pos=3,col=col,font=2,offset=1)
+  labels3 <- round(stats[3,1:3],digits); text(labels3,yy3,labels3,cex=.8,pos=3,col=col,font=2,offset=1)
+  labels4 <- round(stats[4,1:3],digits); text(labels4,yy4,labels4,cex=.8,pos=3,col=col,font=2,offset=1)
+  }
 }
