@@ -1,20 +1,20 @@
-% File man/polyplot2-package.Rd
+% File man/polyPlot2-package.Rd
 
-\name{polyplot2-package}
-\alias{polyplot2-package}
+\name{polyPlot2-package}
+\alias{polyPlot2-package}
 \docType{package}
 
-\title{polyplot2}
+\title{polyPlot2}
 \description{
-\code{polyplot2} A modified polyplot.
+\code{polyPlot2} A modified polyplot.
 }
 
 \details{
 \tabular{ll}{
-Package: \tab polyplot2\cr
+Package: \tab polyPlot2\cr
 Type: \tab Package\cr
 }
-A modified polyplot for R.
+A tool for visualizing distributional statistics.
 }
 
 \author{
