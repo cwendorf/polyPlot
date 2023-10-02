@@ -36,7 +36,7 @@ The following code demonstrates some of the available options for customizing th
 ### The PolyPlot for Positively Skewed Data
 
 Simulate some positively skewed data. Then use `polyStats` get the values separate from the `polyPlot` (which in this case features a frequency histogram).
-```{r<advanced-Positive}
+```{r,Advanced-Positive}
 Scores <- round(rbeta(100,2,5)*20,0)
 polyStats(Scores,digits=3)
 polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Histogram for Positively Skewed Data")
