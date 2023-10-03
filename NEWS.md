@@ -1,6 +1,6 @@
 # polyPlot2
 
-## polyPlot2 0.2.231002
+## polyPlot2 1.0.231002
 
 - Added option to report statistics separate from plot
 - Updated background plots and value labeling
