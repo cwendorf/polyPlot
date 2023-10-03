@@ -27,7 +27,7 @@ library(polyplot2)
 If you do not wish a full install, the latest functions can be made available using these R commands:
 
 ```r
-source("http://raw.githubusercontent.com/cwendorf/polyplot2/main/source-polyPlot2.R")
+source("http://raw.githubusercontent.com/cwendorf/polyPlot2/main/source-polyPlot2.R")
 ```
 
 ### Usage
@@ -50,4 +50,4 @@ The [Advanced Tutorial polyPlot2](./docs/polyPlot2Advanced.md) provides:
 
 ### Citation
 
-Wendorf, C.A. (2022). *polyPlot2: A modified polyplot* [R Package]. [https://github.com/cwendorf/polyPlot2](https://github.com/cwendorf/polyPlot2)
+Wendorf, C.A. (2022). *polyPlot2: A tool for visualizing distributional statistics* [R Package]. [https://github.com/cwendorf/polyPlot2](https://github.com/cwendorf/polyPlot2)
