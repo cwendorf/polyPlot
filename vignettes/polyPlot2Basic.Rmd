@@ -1,18 +1,10 @@
 ---
-title: "PolyPlot2"
-author: "Craig A. Wendorf"
-date: "`r Sys.Date()`"
+subtitle: "Basic Tutorial for polyPlot2"
 output:
-  html_document:
-    toc: true
-    toc_float: true
-    toc_depth: 4
-    collapse: true
-    theme: cerulean
-    highlight: tango
-    keep_md: TRUE
+  github_document:
+    preserve_yaml: FALSE
 vignette: >
-  %\VignetteIndexEntry{Basic Tutorial for PolyPlot2}
+  %\VignetteIndexEntry{Basic Tutorial for polyPlot2}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,6 +12,7 @@ vignette: >
 ```{r,include=FALSE}
 #suppress the warnings and other messages from showing in the knitted file.
 knitr::opts_chunk$set(fig.width=7, fig.height=5,fig.path='figures/',echo=TRUE,warning=FALSE,message=FALSE)
+devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7",filename='revised_toc.R')
 ```
 
 ```{r,include=FALSE}
@@ -29,9 +22,16 @@ remotes::install_github("cwendorf/polyPlot2")}
 library(polyPlot2)
 ```
 
-## Basic Tutorial for PolyPlot2
+## Basic Tutorial for polyPlot2
 
 The following codes demonstrates the default options of PolyPlot. It also explains the basic statistics used.
+
+```{r toc, echo=FALSE}
+thisfile <- knitr::current_input()
+revised_toc(thisfile,base_level=3,toc_depth=4)
+```
+
+---
 
 ### The PolyPlot
 
