@@ -10,15 +10,16 @@ vignette: >
 ---
 
 ```{r,include=FALSE}
-#suppress the warnings and other messages from showing in the knitted file.
-knitr::opts_chunk$set(fig.width=7, fig.height=5,fig.path='figures/',echo=TRUE,warning=FALSE,message=FALSE)
-devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7",filename='revised_toc.R')
+# suppress the warnings and other messages from showing in the knitted file.
+knitr::opts_chunk$set(fig.width = 7, fig.height = 5, fig.path = "figures/", echo = TRUE, warning = FALSE, message = FALSE)
+devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7", filename = "revised_toc.R")
 ```
 
 ```{r,include=FALSE}
-if(!require(polyPlot2)) {
-if(!require(remotes)) install.packages('remotes')
-remotes::install_github("cwendorf/polyPlot2")}
+if (!require(polyPlot2)) {
+  if (!require(remotes)) install.packages("remotes")
+  remotes::install_github("cwendorf/polyPlot2")
+}
 library(polyPlot2)
 ```
 
@@ -28,7 +29,7 @@ The following codes demonstrates the default options of PolyPlot. It also explai
 
 ```{r toc, echo=FALSE}
 thisfile <- knitr::current_input()
-revised_toc(thisfile,base_level=3,toc_depth=4)
+revised_toc(thisfile, base_level = 3, toc_depth = 4)
 ```
 
 ---
@@ -37,7 +38,7 @@ revised_toc(thisfile,base_level=3,toc_depth=4)
 
 First, simulate a set of 100 scores from a normal distribution. Then call `polyPlot` to get the plot.
 ```{r,Basic-Default}
-Scores <- round(rnorm(100,10,2),0)
+Scores <- round(rnorm(100, 10, 2), 0)
 polyPlot(Scores)
 ```
 
@@ -52,8 +53,8 @@ Generally speaking, each level/row provides a different category of measures of 
 
 To see the relationship between the PolyPlot and the underlying distribution, either a frequency distribution (histogram) or a density curve can be added in the background.
 ```{r,Basic-Background}
-polyPlot(Scores,type="frequency")
-polyPlot(Scores,type="density")
+polyPlot(Scores, type = "frequency")
+polyPlot(Scores, type = "density")
 ```
 
 Further explanation of the math behind the PolyPlot is available in Seier and Bonett (2011).

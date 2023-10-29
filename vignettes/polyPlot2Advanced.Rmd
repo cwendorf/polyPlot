@@ -10,15 +10,16 @@ vignette: >
 ---
 
 ```{r,include=FALSE}
-#suppress the warnings and other messages from showing in the knitted file.
-knitr::opts_chunk$set(fig.width=7, fig.height=5,fig.path='figures/',echo=TRUE,warning=FALSE,message=FALSE)
-devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7",filename='revised_toc.R')
+# suppress the warnings and other messages from showing in the knitted file.
+knitr::opts_chunk$set(fig.width = 7, fig.height = 5, fig.path = "figures/", echo = TRUE, warning = FALSE, message = FALSE)
+devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7", filename = "revised_toc.R")
 ```
 
 ```{r,include=FALSE}
-if(!require(polyPlot2)) {
-if(!require(remotes)) install.packages('remotes')
-remotes::install_github("cwendorf/polyPlot2")}
+if (!require(polyPlot2)) {
+  if (!require(remotes)) install.packages("remotes")
+  remotes::install_github("cwendorf/polyPlot2")
+}
 library(polyPlot2)
 ```
 
@@ -28,7 +29,7 @@ The following code demonstrates some of the available options for customizing th
 
 ```{r toc, echo=FALSE}
 thisfile <- knitr::current_input()
-revised_toc(thisfile,base_level=3,toc_depth=4)
+revised_toc(thisfile, base_level = 3, toc_depth = 4)
 ```
 
 ---
@@ -37,25 +38,25 @@ revised_toc(thisfile,base_level=3,toc_depth=4)
 
 Simulate some positively skewed data. Then use `polyStats` get the values separate from the `polyPlot` (which in this case features a frequency histogram).
 ```{r,Advanced-Positive}
-Scores <- round(rbeta(100,2,5)*20,0)
-polyStats(Scores,digits=3)
-polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Histogram for Positively Skewed Data")
+Scores <- round(rbeta(100, 2, 5) * 20, 0)
+polyStats(Scores, digits = 3)
+polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = FALSE, main = "PolyPlot and Histogram for Positively Skewed Data")
 ```
 
 ### The PolyPlot for Negatively Skewed Data
 
 Simulate some negatively skewed data. Then use `polyStats` get the values separate from the `polyPlot` (which in this case features a density curve).
 ```{r,Advanced-Negative}
-Scores <- round(rbeta(100,5,2)*20,0)
-polyStats(Scores,digits=3)
-polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Density for Negatively Skewed Data")
+Scores <- round(rbeta(100, 5, 2) * 20, 0)
+polyStats(Scores, digits = 3)
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = FALSE, main = "PolyPlot and Density for Negatively Skewed Data")
 ```
 
 ### The PolyPlot for Bimodal Data
 
 Simulate some bimodal data. The values are presented on each `polyPlot` to show their utility in explaining the underlying data.
 ```{r,Advanced-Bimodal}
-Scores <- c(round(rnorm(50,7,1),0),round(rnorm(50,13,1),0))
-polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=TRUE,main="PolyPlot and Histogram for Bimodal Data")
-polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=TRUE,main="PolyPlot and Density for Bimodal Data")
+Scores <- c(round(rnorm(50, 7, 1), 0), round(rnorm(50, 13, 1), 0))
+polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Histogram for Bimodal Data")
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density for Bimodal Data")
 ```
