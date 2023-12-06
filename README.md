@@ -1,5 +1,5 @@
 
-# `polyPlot2` 
+# `polyPlot` 
 
 ## A Tool for Visualizing Distributional Statistics
 
@@ -8,10 +8,10 @@
 
 ### Overview
 
-**polyPlot2** is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
+**polyPlot** is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
-<a href="https://github.com/cwendorf/polyPlot2">
-<p align="center"><kbd><img src="docs/figures/polyPlot2CoverImage.png"></kbd></p>
+<a href="https://github.com/cwendorf/polyPlot">
+<p align="center"><kbd><img src="docs/figures/polyPlotCoverImage.png"></kbd></p>
 </a>
 
 ### Installation
@@ -20,34 +20,34 @@ This package is not currently on CRAN, but can be installed and loaded using the
 
 ``` r
 install.packages("remotes")
-remotes::install_github("cwendorf/polyplot2")
-library(polyplot2)
+remotes::install_github("cwendorf/polyPlot")
+library(polyPlot)
 ```
 
 If you do not wish a full install, the latest functions can be made available using these R commands:
 
 ```r
-source("http://raw.githubusercontent.com/cwendorf/polyPlot2/main/source-polyPlot2.R")
+source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.R")
 ```
 
 ### Usage
 
-The [Basic Tutorial for polyPlot2](./docs/polyPlot2Basic.md) provides:
+The [Basic Tutorial for polyPlot](./docs/polyPlotBasic.md) provides:
 
 - An explanation of the basic polyplot
 - Methods for adding histograms and density curves to the polyplot
 
-The [Advanced Tutorial polyPlot2](./docs/polyPlot2Advanced.md) provides:
+The [Advanced Tutorial polyPlot](./docs/polyPlotAdvanced.md) provides:
 
 - An explanation of additional features of the polyplot functions
 - Examples of the polyplot for various distributional shapes
 
 ### Contact Me
 
-- GitHub Issues: [https://github.com/cwendorf/polyPlot2/issues](https://github.com/cwendorf/polyPlot2/issues) 
+- GitHub Issues: [https://github.com/cwendorf/polyPlot/issues](https://github.com/cwendorf/polyPlot/issues) 
 - Author Email: [cwendorf@uwsp.edu](mailto:cwendorf@uwsp.edu)
 - Author Homepage: [https://cwendorf.github.io](https://cwendorf.github.io)
 
 ### Citation
 
-Wendorf, C.A. (2022). *polyPlot2: A tool for visualizing distributional statistics* [R Package]. [https://github.com/cwendorf/polyPlot2](https://github.com/cwendorf/polyPlot2)
+Wendorf, C.A. (2022). *polyPlot: A tool for visualizing distributional statistics* [R Package]. [https://github.com/cwendorf/polyPlot](https://github.com/cwendorf/polyPlot)

@@ -1,6 +1,6 @@
-Package: polyPlot2
+Package: polyPlot
 Type: Package
-Title: polyPlot2
+Title: polyPlot
 Description: A tool for visualizing distributional statistics
 Version: 1.0.231002
 Depends: R (>= 3.6.2)

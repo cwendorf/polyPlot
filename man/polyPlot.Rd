@@ -1,10 +1,10 @@
 % File man/polyPlot.Rd
-% Part of the polyplot2 package
+% Part of the polyPlot package
 
 \name{polyPlot}
 \alias{polyPlot}
 \title{polyPlot}
-\description{Provides a modified PolyPlot}
+\description{Provides a modified polyPlot}
 
 \usage{
 \method{polyPlot}{default}(x,type="none",main=NULL,xlab=NULL,ylab=NULL,xlim=NULL,ylim=NULL,values=TRUE,col="black",bg="gray60",cex=1.2,digits=2)

@@ -1,5 +1,5 @@
 % File man/polyStats.Rd
-% Part of the polyplot2 package
+% Part of the polyPlot package
 
 \name{polyStats}
 \alias{polyStats}
