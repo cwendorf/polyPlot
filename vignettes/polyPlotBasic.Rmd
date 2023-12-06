@@ -1,29 +1,29 @@
 ---
-subtitle: "Basic Tutorial for polyPlot2"
+subtitle: "Basic Tutorial for polyPlot"
 output:
   github_document:
     preserve_yaml: FALSE
 vignette: >
-  %\VignetteIndexEntry{Basic Tutorial for polyPlot2}
+  %\VignetteIndexEntry{Basic Tutorial for polyPlot}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r,include=FALSE}
 # suppress the warnings and other messages from showing in the knitted file.
-knitr::opts_chunk$set(fig.width = 7, fig.height = 5, fig.path = "figures/", echo = TRUE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(fig.width = 7, fig.height = 6, fig.path = "figures/", echo = TRUE, warning = FALSE, message = FALSE, comment = NA)
 devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7", filename = "revised_toc.R")
 ```
 
 ```{r,include=FALSE}
-if (!require(polyPlot2)) {
+if (!require(polyPlot)) {
   if (!require(remotes)) install.packages("remotes")
-  remotes::install_github("cwendorf/polyPlot2")
+  remotes::install_github("cwendorf/polyPlot")
 }
-library(polyPlot2)
+library(polyPlot)
 ```
 
-## Basic Tutorial for polyPlot2
+## Basic Tutorial for polyPlot
 
 The following codes demonstrates the default options of PolyPlot. It also explains the basic statistics used.
 

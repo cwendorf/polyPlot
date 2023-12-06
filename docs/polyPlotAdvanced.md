@@ -1,5 +1,5 @@
 
-## Advanced Tutorial for polyPlot2
+## Advanced Tutorial for polyPlot
 
 The following code demonstrates some of the available options for
 customizing the PolyPlot. It also demonstrates how the PolyPlot does a
@@ -20,18 +20,18 @@ values separate from the `polyPlot` (which in this case features a
 frequency histogram).
 
 ``` r
-Scores <- round(rbeta(100,2,5)*20,0)
-polyStats(Scores,digits=3)
+Scores <- round(rbeta(100, 2, 5) * 20, 0)
+polyStats(Scores, digits = 3)
 ```
 
-    ##           Lower Middle  Upper Spread
-    ## Quartiles 4.000   6.00  7.000  1.500
-    ## Means     3.520   5.67  7.820  2.150
-    ## Z Scores  2.921   5.67  8.419  2.749
-    ## Range     1.000   8.00 15.000  7.000
+              Lower Middle  Upper Spread
+    Quartiles 3.000    5.0  8.000  2.500
+    Means     2.960    5.5  8.040  2.540
+    Z Scores  2.273    5.5  8.727  3.227
+    Range     1.000    7.5 14.000  6.500
 
 ``` r
-polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Histogram for Positively Skewed Data")
+polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = FALSE, main = "PolyPlot and Histogram for Positively Skewed Data")
 ```
 
 ![](figures/Advanced-Positive-1.png)<!-- -->
@@ -43,18 +43,18 @@ values separate from the `polyPlot` (which in this case features a
 density curve).
 
 ``` r
-Scores <- round(rbeta(100,5,2)*20,0)
-polyStats(Scores,digits=3)
+Scores <- round(rbeta(100, 5, 2) * 20, 0)
+polyStats(Scores, digits = 3)
 ```
 
-    ##            Lower Middle  Upper Spread
-    ## Quartiles 13.000  14.50 17.000  2.000
-    ## Means     11.760  14.28 16.800  2.520
-    ## Z Scores  11.042  14.28 17.518  3.238
-    ## Range      5.000  12.00 19.000  7.000
+               Lower Middle  Upper Spread
+    Quartiles 12.000  15.00 17.000  2.500
+    Means     11.780  14.44 17.100  2.660
+    Z Scores  11.109  14.44 17.771  3.331
+    Range      5.000  12.50 20.000  7.500
 
 ``` r
-polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=FALSE,main="PolyPlot and Density for Negatively Skewed Data")
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = FALSE, main = "PolyPlot and Density for Negatively Skewed Data")
 ```
 
 ![](figures/Advanced-Negative-1.png)<!-- -->
@@ -65,14 +65,14 @@ Simulate some bimodal data. The values are presented on each `polyPlot`
 to show their utility in explaining the underlying data.
 
 ``` r
-Scores <- c(round(rnorm(50,7,1),0),round(rnorm(50,13,1),0))
-polyPlot(Scores,type="frequency",col="blue",bg="goldenrod",values=TRUE,main="PolyPlot and Histogram for Bimodal Data")
+Scores <- c(round(rnorm(50, 7, 1), 0), round(rnorm(50, 13, 1), 0))
+polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Histogram for Bimodal Data")
 ```
 
 ![](figures/Advanced-Bimodal-1.png)<!-- -->
 
 ``` r
-polyPlot(Scores,type="density",col="blue",bg="goldenrod",values=TRUE,main="PolyPlot and Density for Bimodal Data")
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density for Bimodal Data")
 ```
 
 ![](figures/Advanced-Bimodal-2.png)<!-- -->

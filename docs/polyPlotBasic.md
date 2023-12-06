@@ -1,5 +1,5 @@
 
-## Basic Tutorial for polyPlot2
+## Basic Tutorial for polyPlot
 
 The following codes demonstrates the default options of PolyPlot. It
 also explains the basic statistics used.
@@ -15,7 +15,7 @@ First, simulate a set of 100 scores from a normal distribution. Then
 call `polyPlot` to get the plot.
 
 ``` r
-Scores <- round(rnorm(100,10,2),0)
+Scores <- round(rnorm(100, 10, 2), 0)
 polyPlot(Scores)
 ```
 
@@ -43,13 +43,13 @@ distribution, either a frequency distribution (histogram) or a density
 curve can be added in the background.
 
 ``` r
-polyPlot(Scores,type="frequency")
+polyPlot(Scores, type = "frequency")
 ```
 
 ![](figures/Basic-Background-1.png)<!-- -->
 
 ``` r
-polyPlot(Scores,type="density")
+polyPlot(Scores, type = "density")
 ```
 
 ![](figures/Basic-Background-2.png)<!-- -->
