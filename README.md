@@ -37,7 +37,7 @@ The [Basic Tutorial for polyPlot](./docs/polyPlotBasic.md) provides:
 - An explanation of the basic polyplot
 - Methods for adding histograms and density curves to the polyplot
 
-The [Advanced Tutorial polyPlot](./docs/polyPlotAdvanced.md) provides:
+The [Advanced Tutorial for polyPlot](./docs/polyPlotAdvanced.md) provides:
 
 - An explanation of additional features of the polyplot functions
 - Examples of the polyplot for various distributional shapes
