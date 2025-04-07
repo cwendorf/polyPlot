@@ -19,7 +19,7 @@
 This package is not currently on CRAN, but can be installed and loaded using these R commands:
 
 ``` r
-install.packages("remotes")
+if (!require(remotes)) install.packages("remotes")
 remotes::install_github("cwendorf/polyPlot")
 library(polyPlot)
 ```
