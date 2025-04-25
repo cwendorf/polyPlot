@@ -1,0 +1,61 @@
+---
+subtitle: "Exploring Distributional Shapes"
+output:
+  github_document:
+    preserve_yaml: FALSE
+vignette: >
+  %\VignetteIndexEntry{polyPlot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r,include=FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 7, comment = NA, fig.path = "figures/")
+devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7", filename = "revised_toc.R")
+```
+
+```{r,include=FALSE}
+if (!require(polyPlot)) {
+  if (!require(remotes)) install.packages("remotes")
+  remotes::install_github("cwendorf/polyPlot")
+}
+library(polyPlot)
+```
+
+## Exploring Distributional Shapes
+
+The examples below demonstrate how the PolyPlot does a good job of approximating the shape of the underlying distribution, even in cases of skewed data.
+
+```{r toc, echo=FALSE}
+thisfile <- knitr::current_input()
+revised_toc(thisfile, base_level = 3, toc_depth = 4)
+```
+
+---
+
+### Positively Skewed Data
+
+For example, simulate some positively skewed data. Use `polyPlot` to get the statistics plot and a frequency histogram. The calculated values are not presented on the plot, but are given in a separate table.
+```{r, Shapes-Positive}
+Scores <- round(rbeta(100, 2, 5) * 20, 0)
+polyStats(Scores, digits = 3)
+polyPlot(Scores, values = FALSE, type = "frequency", main = "PolyPlot and Histogram for Positively Skewed Data")
+```
+
+### Negatively Skewed Data
+
+As another example, simulate some negatively skewed data. Use `polyPlot` to get the statistics plot and a density curve. The calculated values are not presented on the plot, but are given in a separate table.
+```{r, Shapes-Negative}
+Scores <- round(rbeta(100, 5, 2) * 20, 0)
+polyStats(Scores, digits = 3)
+polyPlot(Scores, values = FALSE, type = "density", main = "PolyPlot and Density for Negatively Skewed Data")
+```
+
+### Bimodal Data
+
+As a final example, simulate some bimodal data. Here the values are presented on each `polyPlot` to show their utility in explaining the underlying data.
+```{r, Shapes-Bimodal}
+Scores <- c(round(rnorm(50, 7, 1), 0), round(rnorm(50, 13, 1), 0))
+polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Histogram for Bimodal Data")
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density for Bimodal Data")
+```
