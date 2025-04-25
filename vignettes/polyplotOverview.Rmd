@@ -1,5 +1,5 @@
 ---
-subtitle: "Tutorial for polyPlot"
+subtitle: "polyPlot Overview"
 output:
   github_document:
     preserve_yaml: FALSE
@@ -22,9 +22,9 @@ if (!require(polyPlot)) {
 library(polyPlot)
 ```
 
-## Tutorial for polyPlot
+## polyPlot Overview
 
-The following code demonstrates the various options of PolyPlot. It also explains the basic statistics used. Finally, it demonstrates how the PolyPlot does a good job of approximating the shape of the underlying distribution.
+The following code demonstrates the standard polyPlot and the various available options. 
 
 ```{r toc, echo=FALSE}
 thisfile <- knitr::current_input()
@@ -36,7 +36,7 @@ revised_toc(thisfile, base_level = 3, toc_depth = 4)
 ### The Basic PolyPlot
 
 First, simulate a set of 100 scores from a normal distribution. Then call `polyStats` to get the summary statistics and `polyPlot` to get the associated plot.
-```{r, Tutorial-Default}
+```{r, Overview-Default}
 Scores <- round(rnorm(100, 10, 2), 0)
 polyStats(Scores, digits = 3)
 polyPlot(Scores)
@@ -51,25 +51,21 @@ Generally speaking, each level/row provides a different category of measures of 
 
 Further explanation of the math behind the PolyPlot is available in Seier and Bonett (2011).
 
-### Exploring Distributional Shapes
+### Adding Features to the Plot
 
-To see the relationship between the PolyPlot and the underlying distribution, either a frequency distribution (histogram) or a density curve can be added in the background. If the desire is to focus on shape, the value labels can be supressed. Colors and titles can be altered to further enhance the plot.
+To see the relationship between the PolyPlot and the underlying distribution, either a frequency distribution (histogram) or a density curve can be added in the background. If the desire is to focus on shape, the value labels can be suppressed. Colors and titles can be altered to further enhance the plot.
 
-For example, simulate some positively skewed data. Use `polyPlot` to get the statistics plot and a frequency histogram.
-```{r, Tutorial-Positive}
-Scores <- round(rbeta(100, 2, 5) * 20, 0)
-polyPlot(Scores, values = FALSE, type = "frequency", main = "PolyPlot and Histogram for Positively Skewed Data")
+Use `polyPlot` to get the statistics plot and a frequency histogram.
+```{r, Overview-Histogram}
+polyPlot(Scores, values = FALSE, type = "frequency", main = "PolyPlot and Histogram")
 ```
 
-As another example, simulate some negatively skewed data. Use `polyPlot` to get the statistics plot and a density curve.
-```{r, Tutorial-Negative}
-Scores <- round(rbeta(100, 5, 2) * 20, 0)
-polyPlot(Scores, values = FALSE, type = "density", main = "PolyPlot and Density for Negatively Skewed Data")
+Instead, use `polyPlot` to get the statistics plot and a density curve.
+```{r, Overview-Density}
+polyPlot(Scores, values = FALSE, type = "density", main = "PolyPlot and Density")
 ```
 
-As a final example, simulate some bimodal data. Here the values are presented on each `polyPlot` to show their utility in explaining the underlying data.
-```{r, Tutorial-Bimodal}
-Scores <- c(round(rnorm(50, 7, 1), 0), round(rnorm(50, 13, 1), 0))
-polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Histogram for Bimodal Data")
-polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density for Bimodal Data")
+Or, modify the `polyPlot` density example to add color and retain the labeling.
+```{r, Overview-DensityColor}
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density")
 ```
