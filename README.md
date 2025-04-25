@@ -34,8 +34,8 @@ source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.
 
 This package contains a set of tutorials to demonstrate its use:
 
-- [polyPlot Overview](./docs/polyPlotOverview.md) - An explanation of the basic polyplot functions along with methods for adding histograms and density curves
-- [Exploring Distributional Shapes](./docs/ExploringDistributionalShapes.md) - Examples of using the polyplot to explore positively skewed, negatively skewed, and bimodal data
+- [polyPlot Overview](./docs/polyPlotOverview.md) - An explanation of the basic and advnaced polyPlot functions
+- [Exploring Distributional Shapes](./docs/ExploringDistributionalShapes.md) - Examples of using polyPlot to explore nonnormal data
 
 ### Contact Me
 
