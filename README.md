@@ -8,7 +8,7 @@
 
 ### Overview
 
-**polyPlot** is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
+`polyPlot` is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
 <a href="https://github.com/cwendorf/polyPlot">
 <p align="center"><kbd><img src="docs/figures/CoverImage.png"></kbd></p>
