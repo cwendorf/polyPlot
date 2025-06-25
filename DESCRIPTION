@@ -1,10 +1,16 @@
 Package: polyPlot
 Type: Package
-Title: polyPlot
-Description: A tool for visualizing distributional statistics
-Version: 1.0.231002
+Title: Visualizing Distributional Statistics
+Description: polyPlot is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot.
+Version: 1.1.250625
+Authors@R: person("Craig", "Wendorf", email = "cwendorf@uwsp.edu", role = c("aut", "cre"))
+License: MIT + file LICENSE
+URL: https://github.com/cwendorf/polyPlot
+BugReports: https://github.com/cwendorf/polyPlot/issues
 Depends: R (>= 3.6.2)
 Encoding: UTF-8
 LazyData: true
-Suggests: knitr, rmarkdown
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: stats, utils
 VignetteBuilder: knitr

@@ -1,5 +1,9 @@
 # polyPlot
 
+## polyPlot 1.1.250625
+
+- Added documentation to functions
+
 ## polyPlot 1.0.231002
 
 - Added option to report statistics separate from plot

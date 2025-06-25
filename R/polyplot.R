@@ -1,6 +1,22 @@
 # polyPlot
 ## Modified version of Seier & Bonett's (2011) polyplot
 
+# Create a transparent version of a color
+#
+# Converts a given color to an RGB value with specified transparency (alpha).
+#
+# @param color A color name or hex code.
+# @param percent Numeric value between 0 and 100 indicating the transparency level (default is 30).
+# @param name Optional name for the resulting color.
+#
+# @return A color string in RGB format with alpha transparency applied.
+#
+# @details
+# The function converts the input color to its RGB components, then applies an alpha
+# channel corresponding to the given transparency percentage. The resulting color can
+# be used in plotting functions that support alpha transparency.
+#
+# @noRd
 .tcol <- function(color, percent = 30, name = NULL) {
   # Create transparent versions of colors
   rgb.val <- col2rgb(color)
@@ -8,6 +24,40 @@
   invisible(tcol)
 }
 
+#' Modified PolyPlot Statistics
+#'
+#' Computes a structured summary of key statistics used in \code{\link{polyPlot}} visualizations. The function returns quartile-based, mean-based, z-score-based, and range-based statistics, each with associated spread measures.
+#'
+#' @param x A non-empty numeric vector of data values.
+#' @param digits Integer; number of decimal places to round the statistics. Default is \code{2}.
+#'
+#' @details
+#' The function returns a matrix with 4 rows and 4 columns, capturing four sets of descriptive statistics:
+#' \describe{
+#'   \item{\strong{Quartiles}}{First quartile (Q1), median, third quartile (Q3), and half the interquartile range (IQR/2).}
+#'   \item{\strong{Means}}{Mean of the lower half, overall mean, mean of the upper half, and mean absolute deviation from the median.}
+#'   \item{\strong{Z Scores}}{Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.}
+#'   \item{\strong{Range}}{Minimum, mid-range, maximum, and half the range.}
+#' }
+#'
+#' Each row in the result corresponds to a statistical layer, and columns represent:
+#' \itemize{
+#'   \item \code{Lower}: lower bound of the range
+#'   \item \code{Middle}: central value (e.g., median or mean)
+#'   \item \code{Upper}: upper bound of the range
+#'   \item \code{Spread}: the spread or dispersion metric associated with the layer
+#' }
+#'
+#' @return A numeric matrix with row names: \code{"Quartiles"}, \code{"Means"}, \code{"Z Scores"}, \code{"Range"}, and column names: \code{"Lower"}, \code{"Middle"}, \code{"Upper"}, \code{"Spread"}.
+#'
+#' @examples
+#' set.seed(123)
+#' x <- rnorm(100)
+#' polyStats(x)
+#'
+#' @seealso \code{\link{polyPlot}} for plotting these statistics visually.
+#'
+#' @export
 polyStats <- function(x, digits = 2) {
   # Calculate polyplot statistics
   n <- length(x)
@@ -42,6 +92,48 @@ polyStats <- function(x, digits = 2) {
   return(results)
 }
 
+#' Modified PolyPlot Visualization
+#'
+#' Generates an enhanced polyplot for a numeric vector, overlaying key descriptive statistics (range, quartiles, mean/SD, trimmed mean/SD) and optionally displaying a histogram or density curve in the background.
+#'
+#' @param x A (non-empty) numeric vector of data values.
+#' @param type Character string specifying what to plot in the background. Options are:
+#' \itemize{
+#'   \item \code{"none"} (default): no background plot,
+#'   \item \code{"frequency"}: adds a histogram,
+#*   \item \code{"density"}: adds a kernel density estimate.
+#' }
+#' @param main Main title for the plot. If \code{NULL}, a default is generated based on \code{type}.
+#' @param xlab Label for the x-axis. If \code{NULL}, the variable name is used.
+#' @param ylab Label for the y-axis. If \code{NULL}, a default is used based on \code{type}.
+#' @param xlim Numeric vector of length 2 for custom x-axis limits.
+#' @param ylim Numeric vector of length 2 for custom y-axis limits.
+#' @param values Logical; whether to display numerical values on the plot. Default is \code{TRUE}.
+#' @param col Color used for the plot points, labels, and segments. Default is \code{"black"}.
+#' @param bg Background color for the histogram or density polygon. Default is \code{"gray60"}.
+#' @param cex Scaling factor for point symbols. Default is \code{1.2}.
+#' @param digits Number of decimal places to use when displaying numeric labels. Default is \code{2}.
+#'
+#' @details
+#' The plot overlays four statistical layers, each represented by a line and three key values:
+#' \enumerate{
+#'   \item \strong{Range}: Minimum, mean, and maximum.
+#'   \item \strong{Quartiles}: Q1, median, and Q3.
+#'   \item \strong{Mean/SD}: Mean and one standard deviation around it.
+#'   \item \strong{Trimmed Mean/SD}: Trimmed mean and one trimmed standard deviation.
+#' }
+#' Segments are drawn to connect the corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
+#'
+#' @return Invisibly returns \code{NULL}. Called for its side effect of producing a plot.
+#'
+#' @seealso \code{\link{polyStats}} for the underlying statistics used in plotting.
+#'
+#' @examples
+#' set.seed(42)
+#' x <- rnorm(100)
+#' polyPlot(x, type = "density", col = "blue", bg = "lightblue")
+#'
+#' @export
 polyPlot <- function(x, type = "none", main = NULL, xlab = NULL, ylab = NULL, xlim = NULL, ylim = NULL, values = TRUE, col = "black", bg = "gray60", cex = 1.2, digits = 2) {
   # Get polyplot statistics
   stats <- polyStats(x)
