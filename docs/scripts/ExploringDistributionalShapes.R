@@ -1,7 +1,7 @@
 # polyPlot
 ## Exploring Distributional Shapes
 
-source("http://raw.githubusercontent.com/cwendorf/ployPlot/main/source-polyPlot.R")
+source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.R")
 
 ### Positively Skewed Data
 
