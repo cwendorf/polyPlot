@@ -1,3 +1,4 @@
+# [`polyPlot`](https://github.com/cwendorf/polyPlot/)
 
 ## Exploring Distributional Shapes
 
