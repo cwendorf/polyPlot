@@ -30,10 +30,10 @@ source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.
 
 ### Usage
 
-This package contains a set of tutorials to demonstrate its use:
+This package contains a set of materials to demonstrate its use:
 
-- [polyPlot Overview](./docs/polyPlotOverview.md) - Explanation of the basic and advanced polyPlot functions
-- [Exploring Distributional Shapes](./docs/ExploringDistributionalShapes.md) - Examples of using polyPlot to explore nonnormal data
+- [Introduction](./docs/README.md): Explanation of the basic and advanced polyPlot functions
+- [Exploring Distributional Shapes](./docs/ExploringDistributionalShapes.md): Examples of using polyPlot to explore nonnormal data
 
 ### Contact Me
 
