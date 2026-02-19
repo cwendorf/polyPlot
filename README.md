@@ -35,7 +35,7 @@ This package contains a set of materials to demonstrate its use:
 - [Introduction](./docs/README.md): Explanation of the basic and advanced polyPlot functions
 - [Exploring Distributional Shapes](./docs/ExploringDistributionalShapes.md): Examples of using polyPlot to explore nonnormal data
 
-### Contact Me
+### Contact
 
 - GitHub Issues: [https://github.com/cwendorf/polyPlot/issues](https://github.com/cwendorf/polyPlot/issues) 
 - Author Email: [cwendorf@uwsp.edu](mailto:cwendorf@uwsp.edu)
