@@ -33,7 +33,7 @@ source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.
 This package contains a set of materials to demonstrate its use:
 
 - [Introduction](./docs/README.md): Explanation of the basic and advanced polyPlot functions
-- [Exploring Distributional Shapes](./docs/ExploringDistributionalShapes.md): Examples of using polyPlot to explore nonnormal data
+- [Exploring Data](./docs/ExploringData.md): Examples of using polyPlot to explore nonnormal data
 
 ### Contact
 

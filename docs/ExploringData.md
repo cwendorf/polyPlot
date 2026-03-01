@@ -1,6 +1,6 @@
 # [`polyPlot`](https://github.com/cwendorf/polyPlot/)
 
-## Exploring Distributional Shapes
+## Exploring Data
 
 The examples below demonstrate how the PolyPlot does a good job of
 approximating the shape of the underlying distribution, even in cases of

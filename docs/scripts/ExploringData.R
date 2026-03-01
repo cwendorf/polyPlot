@@ -1,5 +1,5 @@
 # polyPlot
-## Exploring Distributional Shapes
+## Exploring Data
 
 source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.R")
 
