@@ -1,5 +1,4 @@
-
-# `polyPlot` 
+# [`polyPlot`](https://github.com/cwendorf/polyPlot/)
 
 ## A Tool for Visualizing Distributional Statistics
 
@@ -32,8 +31,10 @@ source("http://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot.
 
 This package contains a set of materials to demonstrate its use:
 
-- [Introduction](./docs/README.md): Explanation of the basic and advanced polyPlot functions
-- [Exploring Data](./docs/ExploringData.md): Examples of using polyPlot to explore nonnormal data
+- [Introduction](./docs/README.md): Explanation of the basic and advanced polyPlot capabilities.
+- [Exploring Data](./docs/ExploringData.md): Examples using polyPlot to explore nonnormal data.
+- [PolyPlot Visualization](./docs/polyPlot.md): Documentation for the polyPlot visualization function.
+- [PolyPlot Statistics](./docs/polyStats.md): Documentation for the polyStats analysis function.
 
 ### Contact
 
