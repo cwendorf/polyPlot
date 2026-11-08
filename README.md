@@ -38,7 +38,7 @@ This package contains a set of materials to demonstrate its use:
 
 ### Contact
 
-- GitHub Issues: [https://github.com/cwendorf/polyPlot/issues](https://github.com/cwendorf/polyPlot/issues) 
+- GitHub Issues: [https://github.com/cwendorf/polyPlot/issues](https://github.com/cwendorf/polyPlot/issues)
 - Author Email: [cwendorf@uwsp.edu](mailto:cwendorf@uwsp.edu)
 - Author Homepage: [https://github.com/cwendorf](https://github.com/cwendorf)
 
