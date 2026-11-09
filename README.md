@@ -36,12 +36,6 @@ This package contains a set of materials to demonstrate its use:
 - [PolyPlot Visualization](./docs/polyPlot.md): Documentation for the polyPlot visualization function.
 - [PolyPlot Statistics](./docs/polyStats.md): Documentation for the polyStats analysis function.
 
-### Contact
-
-- GitHub Issues: [https://github.com/cwendorf/polyPlot/issues](https://github.com/cwendorf/polyPlot/issues)
-- Author Email: [cwendorf@uwsp.edu](mailto:cwendorf@uwsp.edu)
-- Author Homepage: [https://github.com/cwendorf](https://github.com/cwendorf)
-
 ### Citation
 
 Wendorf, C.A. (2022). *polyPlot: A tool for visualizing distributional statistics* [R Package]. [https://github.com/cwendorf/polyPlot](https://github.com/cwendorf/polyPlot)
