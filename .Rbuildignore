@@ -1,3 +1,5 @@
 ^README.md
 ^source-polyplot2.R
 docs/
+vignettes/
+.github/
