@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "polyPlot: Visualizing Distributional Statistics"
+authors:
+  - family-names: "Wendorf"
+    given-names: "Craig A."
+    email: "cwendorf@uwsp.edu"
+version: "1.250625"
+license: "MIT"
+repository-code: "https://github.com/cwendorf/polyPlot"
+url: "https://github.com/cwendorf/polyPlot"
+abstract: >-
+  polyPlot is a small R package that offers a modified version of Seier and
+  Bonett's (2011) polyplot.
