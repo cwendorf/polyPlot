@@ -4,7 +4,7 @@
 
 [![Minimal R Version](https://img.shields.io/badge/R%3E%3D-3.6.2-blue?style=for-the-badge)](https://cran.r-project.org/)
 [![GitHub Release](https://img.shields.io/github/v/release/cwendorf/polyPlot?style=for-the-badge)](https://github.com/cwendorf/polyPlot/releases/latest)
-[![Project Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://www.repostatus.org/#active)
+[![Project Status](https://img.shields.io/badge/Status-Inactive-orange?style=for-the-badge)](https://www.repostatus.org/#inactive)
 
 ### Overview
 
