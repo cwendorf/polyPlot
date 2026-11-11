@@ -5,10 +5,5 @@ authors:
   - family-names: "Wendorf"
     given-names: "Craig A."
     email: "cwendorf@uwsp.edu"
-version: "1.250625"
-license: "MIT"
-repository-code: "https://github.com/cwendorf/polyPlot"
+date-released: "2025-06-25"
 url: "https://github.com/cwendorf/polyPlot"
-abstract: >-
-  polyPlot is a small R package that offers a modified version of Seier and
-  Bonett's (2011) polyplot.
