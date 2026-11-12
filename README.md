@@ -32,10 +32,9 @@ source("https://raw.githubusercontent.com/cwendorf/polyPlot/main/source-polyPlot
 
 This package includes the following documentation:
 
-- [Introduction](./docs/README.md): Explanation of the basic and advanced polyPlot capabilities.
-- [Exploring Data](./docs/ExploringData.md): Examples using polyPlot to explore nonnormal data.
-- [PolyPlot Visualization](./docs/polyPlot.md): Documentation for the polyPlot visualization function.
-- [PolyPlot Statistics](./docs/polyStats.md): Documentation for the polyStats analysis function.
+- [Introduction](./docs/README.md): Overview of polyPlot and its capabilities.
+- [Reference](./docs/man/README.md): Documentation for the package functions.
+- [Articles](./docs/vignettes/README.md): Examples using polyPlot to explore data.
 
 ### Citation
 

@@ -28,7 +28,7 @@ polyPlot(
 ### Arguments
 
 - **`x`**: A (non-empty) numeric vector of data values.
-- **`type`**: Character string specifying what to plot in the background. Options are: "none" (default) for no background plot, or "frequency" to add a histogram,
+- **`type`**: Character string specifying what to plot in the background: `"none"` (default) for no background plot, `"frequency"` to add a histogram, or `"density"` to add a kernel density estimate.
 - **`main`**: Main title for the plot. If NULL, a default is generated based on type.
 - **`xlab`**: Label for the x-axis. If NULL, the variable name is used.
 - **`ylab`**: Label for the y-axis. If NULL, a default is used based on type.

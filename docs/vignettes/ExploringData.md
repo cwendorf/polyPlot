@@ -33,7 +33,7 @@ polyStats(Scores, digits = 3)
 polyPlot(Scores, values = FALSE, type = "frequency", main = "PolyPlot and Histogram for Positively Skewed Data")
 ```
 
-![](figures/Shapes-Positive-1.png)<!-- -->
+![](../figures/Shapes-Positive-1.png)<!-- -->
 
 ### Negatively Skewed Data
 
@@ -56,7 +56,7 @@ polyStats(Scores, digits = 3)
 polyPlot(Scores, values = FALSE, type = "density", main = "PolyPlot and Density for Negatively Skewed Data")
 ```
 
-![](figures/Shapes-Negative-1.png)<!-- -->
+![](../figures/Shapes-Negative-1.png)<!-- -->
 
 ### Bimodal Data
 
@@ -69,10 +69,10 @@ Scores <- c(round(rnorm(50, 7, 1), 0), round(rnorm(50, 13, 1), 0))
 polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Histogram for Bimodal Data")
 ```
 
-![](figures/Shapes-Bimodal-1.png)<!-- -->
+![](../figures/Shapes-Bimodal-1.png)<!-- -->
 
 ``` r
 polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density for Bimodal Data")
 ```
 
-![](figures/Shapes-Bimodal-2.png)<!-- -->
+![](../figures/Shapes-Bimodal-2.png)<!-- -->

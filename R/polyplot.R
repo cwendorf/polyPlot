@@ -101,7 +101,7 @@ polyStats <- function(x, digits = 2) {
 #' \itemize{
 #'   \item \code{"none"} (default): no background plot,
 #'   \item \code{"frequency"}: adds a histogram,
-#*   \item \code{"density"}: adds a kernel density estimate.
+#'   \item \code{"density"}: adds a kernel density estimate.
 #' }
 #' @param main Main title for the plot. If \code{NULL}, a default is generated based on \code{type}.
 #' @param xlab Label for the x-axis. If \code{NULL}, the variable name is used.
