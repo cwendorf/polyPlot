@@ -31,7 +31,7 @@ polyStats(Scores, digits = 3)
 polyPlot(Scores)
 ```
 
-![](../figures/Overview-Default-1.png)<!-- -->
+![](./figures/Overview-Default-1.png)<!-- -->
 
 Generally speaking, each level/row provides a different category of
 measures of location and spread:
@@ -65,7 +65,7 @@ Use `polyPlot` to get the statistics plot and a frequency histogram.
 polyPlot(Scores, values = FALSE, type = "frequency", main = "PolyPlot and Histogram")
 ```
 
-![](../figures/Overview-Histogram-1.png)<!-- -->
+![](./figures/Overview-Histogram-1.png)<!-- -->
 
 Instead, use `polyPlot` to get the statistics plot and a density curve.
 
@@ -73,7 +73,7 @@ Instead, use `polyPlot` to get the statistics plot and a density curve.
 polyPlot(Scores, values = FALSE, type = "density", main = "PolyPlot and Density")
 ```
 
-![](../figures/Overview-Density-1.png)<!-- -->
+![](./figures/Overview-Density-1.png)<!-- -->
 
 Or, modify the `polyPlot` density example to add color and retain the
 labeling.
@@ -82,4 +82,4 @@ labeling.
 polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", values = TRUE, main = "PolyPlot and Density")
 ```
 
-![](../figures/Overview-DensityColor-1.png)<!-- -->
+![](./figures/Overview-DensityColor-1.png)<!-- -->

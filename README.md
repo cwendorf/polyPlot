@@ -10,7 +10,7 @@
 
 `polyPlot` is a small R package that offers a modified version of Seier and Bonett's (2011) polyplot, a visualization tool for various distributional summary statistics.
 
-![A polyPlot plus a Histogram](./docs/figures/CoverImage.png)
+![A polyPlot plus a Histogram](./docs/vignettes/figures/CoverImage.png)
 
 ### Installation
 
