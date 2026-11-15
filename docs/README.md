@@ -6,6 +6,7 @@
 
 - [Overview](#overview)
 - [Resources](#resources)
+- [References](#references)
 
 ---
 
@@ -13,7 +14,7 @@
 
 Distribution summaries can be difficult to compare when measures of center and spread are viewed separately. `polyPlot` layers several summaries over a histogram or density curve so their relationships are visible together. Each `polyPlot` brings together quartiles, split-half means, mean-and-standard-deviation bounds, and the range. `polyStats` returns the corresponding statistics in a structured matrix.
 
-![A polyPlot plus a Histogram](./vignettes/figures/CoverImage.png)
+![A polyPlot plus a Histogram](./vignettes/figures/Overview-Default-1.png)
 
               Lower Middle  Upper Spread
     Quartiles 8.750  10.00 11.000  1.125
