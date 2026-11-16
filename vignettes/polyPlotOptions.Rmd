@@ -1,0 +1,87 @@
+---
+subtitle: "polyPlot Options"
+output:
+  github_document:
+    preserve_yaml: FALSE
+vignette: >
+  %\VignetteIndexEntry{polyPlot Options}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r,include=FALSE}
+knitr::opts_chunk$set(fig.width = 7, fig.height = 7, comment = NA, fig.path = "figures/")
+devtools::source_gist("8e6e5dc401e3fc1042ef7a030f9d19c7", filename = "revised_toc.R")
+```
+
+```{r,include=FALSE}
+if (!require(polyPlot)) {
+  if (!require(remotes)) install.packages("remotes")
+  remotes::install_github("cwendorf/polyPlot")
+}
+library(polyPlot)
+```
+
+## polyPlot Options
+
+`polyPlot` provides options for adding distribution context, changing labels and limits, and adjusting the appearance of the statistical layers.
+
+```{r toc, echo=FALSE}
+thisfile <- knitr::current_input()
+revised_toc(thisfile, base_level = 3, toc_depth = 1)
+```
+
+---
+
+The examples use a normally distributed set of scores.
+
+```{r, Options-Data, eval=FALSE}
+Scores <- round(rnorm(100, 10, 2), 0)
+```
+
+### Value Labels
+
+`values` controls whether the numeric values for the statistical layers are printed on the plot. It defaults to `TRUE`. The `digits` argument sets the number of decimal places displayed in those labels and defaults to `2`.
+
+```{r, Options-Labels, eval=FALSE}
+polyPlot(Scores, values = FALSE)
+polyPlot(Scores, values = TRUE, digits = 1)
+```
+
+### Background Representation
+
+The `type` argument controls what is shown behind the statistical layers:
+
+- `"none"` (the default) omits a visible background distribution.
+- `"frequency"` adds a frequency histogram.
+- `"density"` adds a density curve.
+
+```{r, Options-Background, eval=FALSE}
+polyPlot(Scores, type = "frequency")
+polyPlot(Scores, type = "density")
+```
+
+### Colors and Point Size
+
+`col` sets the color of the statistical points, lines, and value labels. `bg` sets the background color used for the histogram or density curve. Both default to `"black"` and `"gray60"`, respectively. The `cex` argument scales the statistical point symbols and defaults to `1.2`.
+
+```{r, Options-Colors, eval=FALSE}
+polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", cex = 1.5)
+polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", cex = 1.5)
+```
+
+### Titles and Axes
+
+Use `main`, `xlab`, and `ylab` to set the plot title and axis labels. By default, the title and vertical axis label depend on `type`; the horizontal axis label is based on the input expression. `xlim` and `ylim` accept numeric vectors of length two to set the axis limits.
+
+```{r, Options-Axes, eval=FALSE}
+polyPlot(
+  Scores,
+  type = "density",
+  main = "Distribution of Important Scores",
+  xlab = "Important Score",
+  ylab = "Density Distribution",
+  xlim = c(0, 20),
+  ylim = c(0, 0.2)
+)
+```

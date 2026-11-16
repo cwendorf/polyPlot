@@ -12,15 +12,21 @@
 
 ### Overview
 
-Distribution summaries can be difficult to compare when measures of center and spread are viewed separately. `polyPlot` layers several summaries over a histogram or density curve so their relationships are visible together. Each `polyPlot` brings together quartiles, split-half means, mean-and-standard-deviation bounds, and the range. `polyStats` returns the corresponding statistics in a structured matrix.
+Distribution summaries can be difficult to compare when measures of center and spread are viewed separately. A polyplot combines multiple measures of locaation and spread into a single visualization. Consider the following example"
 
-![A polyPlot plus a Histogram](./vignettes/figures/CoverImage.png)
+![](./vignettes/figures/Overview-Default-1.png)<!-- -->
 
-              Lower Middle Upper Spread
-    Quartiles  8.75  10.00 11.00   1.12
-    Means      8.24   9.85 11.46   1.61
-    Z Scores   7.79   9.85 11.91   2.06
-    Range      5.00  10.00 15.00   5.00
+Generally speaking, each level/row provides a different category of
+measures of location and spread:
+
+- First/Top: Provides the quartiles (and median as the center) of the distribution, with the interquartile range divided by 2 as the measure of spread
+- Second: Provides the means of the halves (and the whole set as the center) of the distribution, with the mean absolute deviation from the median as the measure of spread
+- Third: Provides the mean (as the center) of the distribution and points +/- one standard deviation from the mean (i.e, z scores of -1 and 1), with the standard deviation as the measure of spread
+- Fourth/Bottom: Provides the range (and midrange as the center) of the distribution, with the range divided by 2 as the measure of spread
+
+Further explanation of the math behind the PolyPlot is available in Seier and Bonett (2011).
+
+But just as importantly, `polyPlot` layers these summaries over a histogram or density curve so their relationships are visible together. `polyStats` returns the corresponding statistics in a structured matrix.
 
 ### Resources
 
@@ -29,4 +35,4 @@ Distribution summaries can be difficult to compare when measures of center and s
 
 ### References
 
-Seier, E., & Bonett, D. G. (2011). A Polyplot for Visualizing Location, Spread, Skewness, and Kurtosis. _The American Statistician, 65_(4), 258–261. http://www.jstor.org/stable/23339553
+Seier, E., & Bonett, D. G. (2011). A polyplot for visualizing location, spread, skewness, and kurtosis. _The American Statistician, 65_(4), 258–261. http://www.jstor.org/stable/23339553
