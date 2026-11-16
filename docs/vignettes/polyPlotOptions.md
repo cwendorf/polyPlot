@@ -36,6 +36,10 @@ polyPlot(Scores, values = TRUE, digits = 1)
 
 ### Background Representation
 
+To see the relationship between the polyplot and the underlying
+distribution, either a frequency distribution (histogram) or a density
+curve can be added in the background.
+
 The `type` argument controls what is shown behind the statistical layers:
 
 - `"none"` (the default) omits a visible background distribution.

@@ -1,56 +1,44 @@
 # [`polyPlot`](https://github.com/cwendorf/polyPlot/)
 
-## PolyPlot Overview
+## polyPlot Overview
 
-The following code introduces the statistical layers in a standard
-polyPlot and shows how a histogram or density curve can represent the
-underlying distribution.
+A standard polyPlot presents several summaries of a distribution as
+separate rows. This overview shows how to create a basic plot and
+interpret those rows.
 
-- [The Basic PolyPlot](#the-basic-polyplot)
-- [Adding a Distribution](#adding-a-distribution)
+- [Basic polyPlot](#basic-polyplot)
+- [Numerical Summary](#numerical-summary)
 
 ------------------------------------------------------------------------
 
-### The Basic PolyPlot
+### Basic polyPlot
 
-First, simulate a set of 100 scores from a normal distribution. Then
-call `polyStats` to get the summary statistics and `polyPlot` to get the associated plot.
+First, simulate a set of 100 scores from a normal distribution, then create a polyPlot.
 
 ``` r
 Scores <- round(rnorm(100, 10, 2), 0)
-polyStats(Scores, digits = 3)
-```
-
-              Lower Middle  Upper Spread
-    Quartiles 8.750  10.00 11.000  1.125
-    Means     8.320   9.77 11.220  1.450
-    Z Scores  7.901   9.77 11.639  1.869
-    Range     6.000  10.50 15.000  4.500
-
-``` r
 polyPlot(Scores)
 ```
 
 ![](./figures/Overview-Default-1.png)<!-- -->
 
-### Adding a Distribution
+Generally speaking, each level/row provides a different category of measures of location and spread:
 
-To see the relationship between the polyplot and the underlying
-distribution, either a frequency distribution (histogram) or a density
-curve can be added in the background.
+- First/Top: Provides the quartiles (and median as the center) of the distribution, with the interquartile range divided by 2 as the measure of spread
+- Second: Provides the means of the halves (and the whole set as the center) of the distribution, with the mean absolute deviation from the median as the measure of spread
+- Third: Provides the mean (as the center) of the distribution and points +/- one standard deviation from the mean (i.e, z scores of -1 and 1), with the standard deviation as the measure of spread
+- Fourth/Bottom: Provides the range (and midrange as the center) of the distribution, with the range divided by 2 as the measure of spread
 
-Use `polyPlot` to get the plot with a frequency histogram.
+### Numerical Summary
 
-``` r
-polyPlot(Scores, type = "frequency", main = "PolyPlot and Histogram")
-```
-
-![](./figures/Overview-Histogram-1.png)<!-- -->
-
-Instead, use `polyPlot` to get the plot with a density curve.
+Use `polyStats` to see the values represented in the plot. This is useful in cases where the user suppresses the values from the plot.
 
 ``` r
-polyPlot(Scores, type = "density", main = "PolyPlot and Density")
+polyStats(Scores, digits = 3)
 ```
 
-![](./figures/Overview-Density-1.png)<!-- -->
+              Lower Middle Upper Spread
+    Quartiles  9.00  10.00 11.00   1.00
+    Means      8.94  10.14 11.34   1.20
+    Z Scores   8.58  10.14 11.70   1.56
+    Range      6.00   9.50 13.00   3.50
