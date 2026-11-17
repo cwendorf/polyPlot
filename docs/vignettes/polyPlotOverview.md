@@ -29,9 +29,9 @@ polyStats(Scores)
 ```
 
               Lower Middle Upper Spread
-    Quartiles  9.00  10.50 12.00   1.50
-    Means      9.00  10.44 11.88   1.44
-    Sigmas     8.62  10.44 12.26   1.82
+    Quartiles  8.00   9.50 11.00   1.50
+    Means      8.12   9.71 11.30   1.59
+    Sigmas     7.80   9.71 11.62   1.91
     Range      5.00   9.50 14.00   4.50
 
 ### Interpretation
