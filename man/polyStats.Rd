@@ -12,7 +12,7 @@ polyStats(x, digits = 2)
 \item{digits}{Integer; number of decimal places to round the statistics. Default is \code{2}.}
 }
 \value{
-A numeric matrix with row names: \code{"Quartiles"}, \code{"Means"}, \code{"Z Scores"}, \code{"Range"}, and column names: \code{"Lower"}, \code{"Middle"}, \code{"Upper"}, \code{"Spread"}.
+A numeric matrix with row names: \code{"Quartiles"}, \code{"Means"}, \code{"Sigmas"}, \code{"Range"}, and column names: \code{"Lower"}, \code{"Middle"}, \code{"Upper"}, \code{"Spread"}.
 }
 \description{
 Computes a structured summary of key statistics used in \code{\link{polyPlot}} visualizations. The function returns quartile-based, mean-based, z-score-based, and range-based statistics, each with associated spread measures.
@@ -22,7 +22,7 @@ The function returns a matrix with 4 rows and 4 columns, capturing four sets of 
 \describe{
 \item{\strong{Quartiles}}{First quartile (Q1), median, third quartile (Q3), and half the interquartile range (IQR/2).}
 \item{\strong{Means}}{Mean of the lower half, overall mean, mean of the upper half, and mean absolute deviation from the median.}
-\item{\strong{Z Scores}}{Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.}
+\item{\strong{Sigmas}}{Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.}
 \item{\strong{Range}}{Minimum, mid-range, maximum, and half the range.}
 }
 

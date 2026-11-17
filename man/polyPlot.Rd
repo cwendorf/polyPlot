@@ -39,7 +39,7 @@ polyPlot(
 
 \item{ylim}{Numeric vector of length 2 for custom y-axis limits.}
 
-\item{values}{Logical; whether to display numerical values on the plot. Default is \code{TRUE}.}
+\item{values}{Logical; whether to display row labels and numerical values on the plot. Default is \code{TRUE}.}
 
 \item{col}{Color used for the plot points, labels, and segments. Default is \code{"black"}.}
 
@@ -53,17 +53,10 @@ polyPlot(
 Invisibly returns \code{NULL}. Called for its side effect of producing a plot.
 }
 \description{
-Generates an enhanced polyplot for a numeric vector, overlaying key descriptive statistics (range, quartiles, mean/SD, trimmed mean/SD) and optionally displaying a histogram or density curve in the background.
+Generates an enhanced polyplot for a numeric vector, overlaying quartiles, means, sigmas, and range, and optionally displaying a histogram or density curve in the background.
 }
 \details{
-The plot overlays four statistical layers, each represented by a line and three key values:
-\enumerate{
-\item \strong{Range}: Minimum, mean, and maximum.
-\item \strong{Quartiles}: Q1, median, and Q3.
-\item \strong{Mean/SD}: Mean and one standard deviation around it.
-\item \strong{Trimmed Mean/SD}: Trimmed mean and one trimmed standard deviation.
-}
-Segments are drawn to connect the corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
+The plot overlays the four rows returned by \code{\link{polyStats}}: \strong{Quartiles}, \strong{Means}, \strong{Sigmas}, and \strong{Range}. When \code{values = TRUE}, these row names are displayed beside their corresponding layers along with the numerical values. Segments connect corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
 }
 \examples{
 set.seed(42)

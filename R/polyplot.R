@@ -36,7 +36,7 @@
 #' \describe{
 #'   \item{\strong{Quartiles}}{First quartile (Q1), median, third quartile (Q3), and half the interquartile range (IQR/2).}
 #'   \item{\strong{Means}}{Mean of the lower half, overall mean, mean of the upper half, and mean absolute deviation from the median.}
-#'   \item{\strong{Z Scores}}{Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.}
+#'   \item{\strong{Sigmas}}{Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.}
 #'   \item{\strong{Range}}{Minimum, mid-range, maximum, and half the range.}
 #' }
 #'
@@ -48,7 +48,7 @@
 #'   \item \code{Spread}: the spread or dispersion metric associated with the layer
 #' }
 #'
-#' @return A numeric matrix with row names: \code{"Quartiles"}, \code{"Means"}, \code{"Z Scores"}, \code{"Range"}, and column names: \code{"Lower"}, \code{"Middle"}, \code{"Upper"}, \code{"Spread"}.
+#' @return A numeric matrix with row names: \code{"Quartiles"}, \code{"Means"}, \code{"Sigmas"}, \code{"Range"}, and column names: \code{"Lower"}, \code{"Middle"}, \code{"Upper"}, \code{"Spread"}.
 #'
 #' @examples
 #' set.seed(123)
@@ -88,13 +88,13 @@ polyStats <- function(x, digits = 2) {
   means <- c(mean1, xmean, mean2, delta)
   results <- round(rbind(quartiles, means, zscores, range), digits)
   colnames(results) <- c("Lower", "Middle", "Upper", "Spread")
-  rownames(results) <- c("Quartiles", "Means", "Z Scores", "Range")
+  rownames(results) <- c("Quartiles", "Means", "Sigmas", "Range")
   return(results)
 }
 
 #' Modified PolyPlot Visualization
 #'
-#' Generates an enhanced polyplot for a numeric vector, overlaying key descriptive statistics (range, quartiles, mean/SD, trimmed mean/SD) and optionally displaying a histogram or density curve in the background.
+#' Generates an enhanced polyplot for a numeric vector, overlaying quartiles, means, sigmas, and range, and optionally displaying a histogram or density curve in the background.
 #'
 #' @param x A (non-empty) numeric vector of data values.
 #' @param type Character string specifying what to plot in the background. Options are:
@@ -108,21 +108,14 @@ polyStats <- function(x, digits = 2) {
 #' @param ylab Label for the y-axis. If \code{NULL}, a default is used based on \code{type}.
 #' @param xlim Numeric vector of length 2 for custom x-axis limits.
 #' @param ylim Numeric vector of length 2 for custom y-axis limits.
-#' @param values Logical; whether to display numerical values on the plot. Default is \code{TRUE}.
+#' @param values Logical; whether to display row labels and numerical values on the plot. Default is \code{TRUE}.
 #' @param col Color used for the plot points, labels, and segments. Default is \code{"black"}.
 #' @param bg Background color for the histogram or density polygon. Default is \code{"gray60"}.
 #' @param cex Scaling factor for point symbols. Default is \code{1.2}.
 #' @param digits Number of decimal places to use when displaying numeric labels. Default is \code{2}.
 #'
 #' @details
-#' The plot overlays four statistical layers, each represented by a line and three key values:
-#' \enumerate{
-#'   \item \strong{Range}: Minimum, mean, and maximum.
-#'   \item \strong{Quartiles}: Q1, median, and Q3.
-#'   \item \strong{Mean/SD}: Mean and one standard deviation around it.
-#'   \item \strong{Trimmed Mean/SD}: Trimmed mean and one trimmed standard deviation.
-#' }
-#' Segments are drawn to connect the corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
+#' The plot overlays the four rows returned by \code{\link{polyStats}}: \strong{Quartiles}, \strong{Means}, \strong{Sigmas}, and \strong{Range}. When \code{values = TRUE}, these row names are displayed beside their corresponding layers along with the numerical values. Segments connect corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
 #'
 #' @return Invisibly returns \code{NULL}. Called for its side effect of producing a plot.
 #'
@@ -136,7 +129,7 @@ polyStats <- function(x, digits = 2) {
 #' @export
 polyPlot <- function(x, type = "none", main = NULL, xlab = NULL, ylab = NULL, xlim = NULL, ylim = NULL, values = TRUE, col = "black", bg = "gray60", cex = 1.2, digits = 2) {
   # Get polyplot statistics
-  stats <- polyStats(x)
+  stats <- polyStats(x, digits = digits)
   # Create basic and background plots
   dens <- density(x)
   if (is.null(xlim)) {
@@ -158,7 +151,7 @@ polyPlot <- function(x, type = "none", main = NULL, xlab = NULL, ylab = NULL, xl
   if (is.null(xlab)) {
     xlab <- substitute(x)
   }
-  par(mar = c(5, 5, 3, 2))
+  par(mar = c(5, 5, 3, 4))
   hist(x, prob = FALSE, plot = TRUE, axes = FALSE, col = histbg, border = histborder, xlab = xlab, ylab = NULL, xlim = xlim, ylim = ylim, main = NULL)
   axis(1)
   if (type == "none") {
@@ -213,13 +206,14 @@ polyPlot <- function(x, type = "none", main = NULL, xlab = NULL, ylab = NULL, xl
   segments(stats[3, 2], yy3, stats[4, 2], yy4, lty = "dotted", col = col)
   # Add statistics to the plot
   if (values) {
-    labels1 <- round(stats[1, 1:3], digits)
-    text(labels1, yy1, labels1, cex = .8, pos = 3, col = col, font = 2, offset = 1)
-    labels2 <- round(stats[2, 1:3], digits)
-    text(labels2, yy2, labels2, cex = .8, pos = 3, col = col, font = 2, offset = 1)
-    labels3 <- round(stats[3, 1:3], digits)
-    text(labels3, yy3, labels3, cex = .8, pos = 3, col = col, font = 2, offset = 1)
-    labels4 <- round(stats[4, 1:3], digits)
-    text(labels4, yy4, labels4, cex = .8, pos = 3, col = col, font = 2, offset = 1)
+    text(xlim[2] + strwidth("M", cex = .8), c(yy1, yy2, yy3, yy4), rownames(stats), pos = 3, offset = 1, adj = 0, xpd = NA, col = col, font = 2, cex = .8)
+    labels1 <- formatC(stats[1, 1:3], format = "f", digits = digits)
+    text(stats[1, 1:3], yy1, labels1, cex = .8, pos = 3, col = col, font = 2, offset = 1)
+    labels2 <- formatC(stats[2, 1:3], format = "f", digits = digits)
+    text(stats[2, 1:3], yy2, labels2, cex = .8, pos = 3, col = col, font = 2, offset = 1)
+    labels3 <- formatC(stats[3, 1:3], format = "f", digits = digits)
+    text(stats[3, 1:3], yy3, labels3, cex = .8, pos = 3, col = col, font = 2, offset = 1)
+    labels4 <- formatC(stats[4, 1:3], format = "f", digits = digits)
+    text(stats[4, 1:3], yy4, labels4, cex = .8, pos = 3, col = col, font = 2, offset = 1)
   }
 }

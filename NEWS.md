@@ -1,5 +1,10 @@
 # polyPlot
 
+## polyPlot 1.261120
+
+- Added labels to plot for clarity of presentation
+- Added vignettes to explore various distributions
+
 ## polyPlot 1.250625
 
 - Added documentation to functions
