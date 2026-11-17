@@ -1,6 +1,6 @@
 # [`polyPlot`](https://github.com/cwendorf/polyPlot/)
 
-## PolyPlot Statistics
+## Modified PolyPlot Statistics
 
 ### Description
 
@@ -23,7 +23,7 @@ The function returns a matrix with 4 rows and 4 columns, capturing four sets of 
 
 - Quartiles: First quartile (Q1), median, third quartile (Q3), and half the interquartile range (IQR/2).
 - Means: Mean of the lower half, overall mean, mean of the upper half, and mean absolute deviation from the median.
-- Z Scores: Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.
+- Sigmas: Mean minus one standard deviation, mean, mean plus one standard deviation, and the standard deviation.
 - Range: Minimum, mid-range, maximum, and half the range.
 
 Each row in the result corresponds to a statistical layer, and columns represent:
@@ -35,7 +35,7 @@ Each row in the result corresponds to a statistical layer, and columns represent
 
 ### Value
 
-A numeric matrix with row names: "Quartiles", "Means", "Z Scores", "Range", and column names: "Lower", "Middle", "Upper", "Spread".
+A numeric matrix with row names: "Quartiles", "Means", "Sigmas", "Range", and column names: "Lower", "Middle", "Upper", "Spread".
 
 ### Examples
 

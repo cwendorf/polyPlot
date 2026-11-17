@@ -1,10 +1,10 @@
 # [`polyPlot`](https://github.com/cwendorf/polyPlot/)
 
-## PolyPlot Visualization
+## Modified PolyPlot Visualization
 
 ### Description
 
-Generates an enhanced polyplot for a numeric vector, overlaying key descriptive statistics (range, quartiles, mean/SD, trimmed mean/SD) and optionally displaying a histogram or density curve in the background.
+Generates an enhanced polyplot for a numeric vector, overlaying quartiles, means, sigmas, and range, and optionally displaying a histogram or density curve in the background.
 
 ### Usage
 
@@ -34,7 +34,7 @@ polyPlot(
 - **`ylab`**: Label for the y-axis. If NULL, a default is used based on type.
 - **`xlim`**: Numeric vector of length 2 for custom x-axis limits.
 - **`ylim`**: Numeric vector of length 2 for custom y-axis limits.
-- **`values`**: Logical; whether to display numerical values on the plot. Default is TRUE.
+- **`values`**: Logical; whether to display row labels and numerical values on the plot. Default is TRUE.
 - **`col`**: Color used for the plot points, labels, and segments. Default is "black".
 - **`bg`**: Background color for the histogram or density polygon. Default is "gray60".
 - **`cex`**: Scaling factor for point symbols. Default is 1.2.
@@ -42,14 +42,7 @@ polyPlot(
 
 ### Details
 
-The plot overlays four statistical layers, each represented by a line and three key values:
-
-- Range: Minimum, mean, and maximum.
-- Quartiles: Q1, median, and Q3.
-- Mean/SD: Mean and one standard deviation around it.
-- Trimmed Mean/SD: Trimmed mean and one trimmed standard deviation.
-
-Segments are drawn to connect the corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
+The plot overlays the four rows returned by `polyStats`: **Quartiles**, **Means**, **Sigmas**, and **Range**. When `values = TRUE`, these row names are displayed beside their corresponding layers along with the numerical values. Segments connect corresponding statistics across layers to emphasize shape and skewness. Background can include a histogram (frequency) or a density curve (density).
 
 ### Value
 

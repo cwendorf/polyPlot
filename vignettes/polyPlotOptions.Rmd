@@ -35,15 +35,15 @@ revised_toc(thisfile, base_level = 3, toc_depth = 1)
 
 The examples use a normally distributed set of scores.
 
-```{r, Options-Data, eval=FALSE}
+```{r, Options-Data}
 Scores <- round(rnorm(100, 10, 2), 0)
 ```
 
-### Value Labels
+### Row and Value Labels
 
-`values` controls whether the numeric values for the statistical layers are printed on the plot. It defaults to `TRUE`. The `digits` argument sets the number of decimal places displayed in those labels and defaults to `2`.
+`values` controls whether the row names and numeric values for the statistical layers are printed on the plot. It defaults to `TRUE`. The `digits` argument sets the number of decimal places displayed in the numeric labels and defaults to `2`.
 
-```{r, Options-Labels, eval=FALSE}
+```{r, Options-Labels}
 polyPlot(Scores, values = FALSE)
 polyPlot(Scores, values = TRUE, digits = 1)
 ```
@@ -60,7 +60,7 @@ The `type` argument controls what is shown behind the statistical layers:
 - `"frequency"` adds a frequency histogram.
 - `"density"` adds a density curve.
 
-```{r, Options-Background, eval=FALSE}
+```{r, Options-Background}
 polyPlot(Scores, type = "frequency")
 polyPlot(Scores, type = "density")
 ```
@@ -69,7 +69,7 @@ polyPlot(Scores, type = "density")
 
 `col` sets the color of the statistical points, lines, and value labels. `bg` sets the background color used for the histogram or density curve. Both default to `"black"` and `"gray60"`, respectively. The `cex` argument scales the statistical point symbols and defaults to `1.2`.
 
-```{r, Options-Colors, eval=FALSE}
+```{r, Options-Colors}
 polyPlot(Scores, type = "frequency", col = "blue", bg = "goldenrod", cex = 1.5)
 polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", cex = 1.5)
 ```
@@ -78,7 +78,7 @@ polyPlot(Scores, type = "density", col = "blue", bg = "goldenrod", cex = 1.5)
 
 Use `main`, `xlab`, and `ylab` to set the plot title and axis labels. By default, the title and vertical axis label depend on `type`; the horizontal axis label is based on the input expression. `xlim` and `ylim` accept numeric vectors of length two to set the axis limits.
 
-```{r, Options-Axes, eval=FALSE}
+```{r, Options-Axes}
 polyPlot(
   Scores,
   type = "density",

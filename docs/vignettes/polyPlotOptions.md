@@ -18,12 +18,12 @@ The examples use a normally distributed set of scores.
 Scores <- round(rnorm(100, 10, 2), 0)
 ```
 
-### Value Labels
+### Row and Value Labels
 
-`values` controls whether the numeric values for the statistical layers
-are printed on the plot. It defaults to `TRUE`. The `digits` argument
-sets the number of decimal places displayed in those labels and defaults
-to `2`.
+`values` controls whether the row names and numeric values for the
+statistical layers are printed on the plot. It defaults to `TRUE`. The
+`digits` argument sets the number of decimal places displayed in the
+numeric labels and defaults to `2`.
 
 ``` r
 polyPlot(Scores, values = FALSE)
